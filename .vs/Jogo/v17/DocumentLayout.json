@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "Gerenciador_Grafico.cpp",
               "ToolTip": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Gerenciador_Grafico.cpp",
               "RelativeToolTip": "Gerenciador_Grafico.cpp",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAAAHMAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAgwGAAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-27T20:57:44.751Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "Gerenciador_Grafico.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-27T19:26:23.29Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T19:26:23.29Z"
             },
             {
               "$type": "Document",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "Main.cpp",
               "ViewState": "AgIAAB0AAAAAAAAAAAAgwDQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-26T20:45:41.861Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T20:45:41.861Z"
             }
           ]
         }
