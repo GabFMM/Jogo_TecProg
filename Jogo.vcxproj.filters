@@ -36,10 +36,16 @@
     <ClInclude Include="ListaTemplate.h">
       <Filter>Listas</Filter>
     </ClInclude>
+    <ClInclude Include="Gerenciador_Grafico.h">
+      <Filter>Gerenciadores</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Gerenciador_Grafico.cpp">
+      <Filter>Gerenciadores</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

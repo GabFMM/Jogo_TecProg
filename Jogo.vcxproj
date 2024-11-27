@@ -20,10 +20,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Elemento.h" />
+    <ClInclude Include="Gerenciador_Grafico.h" />
     <ClInclude Include="Lista2.h" />
     <ClInclude Include="ListaTemplate.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Gerenciador_Grafico.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -112,12 +114,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\yagoa\Desktop\Game\Jogo\SFML-2.5.1\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)SFML-2.5.1/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\yagoa\Desktop\Game\Jogo\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)SFML-2.5.1/lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -129,14 +131,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\yagoa\Desktop\Game\Jogo\SFML-2.5.1\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)SFML-2.5.1/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\yagoa\Desktop\Game\Jogo\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)SFML-2.5.1/lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
