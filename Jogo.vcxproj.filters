@@ -13,20 +13,32 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Listas">
+      <UniqueIdentifier>{fa2d789e-4322-4e7f-b75b-a6e20f7c8652}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entidades">
+      <UniqueIdentifier>{c0184193-900c-4f38-981b-2fa42c1ab07b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gerenciadores">
+      <UniqueIdentifier>{b2ab929b-37c3-45c4-9312-d6e14bad778e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fases">
+      <UniqueIdentifier>{3bc94c43-da81-45ac-8d63-68b3f27fbe74}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header\Elemento.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
+    <ClInclude Include="Elemento.h">
+      <Filter>Listas</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Lista2.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
+    <ClInclude Include="Lista2.h">
+      <Filter>Listas</Filter>
     </ClInclude>
-    <ClInclude Include="Header\ListaTemplate.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
+    <ClInclude Include="ListaTemplate.h">
+      <Filter>Listas</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Src\Main.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>

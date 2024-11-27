@@ -19,12 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header\Elemento.h" />
-    <ClInclude Include="Header\Lista2.h" />
-    <ClInclude Include="Header\ListaTemplate.h" />
+    <ClInclude Include="Elemento.h" />
+    <ClInclude Include="Lista2.h" />
+    <ClInclude Include="ListaTemplate.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Src\Main.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
