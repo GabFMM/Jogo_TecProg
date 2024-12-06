@@ -54,7 +54,7 @@ int main()
     Lista.insert_back(static_cast<Entidades::Entidade*>(&obs));
     Lista.percorrer();
 
-    Gerenciadores::Gerenciador_Colisoes* gc = new Gerenciadores::Gerenciador_Colisoes(0.5f);
+    Gerenciadores::Gerenciador_Colisoes* gc = new Gerenciadores::Gerenciador_Colisoes(0.001f);
     //Poderiamos converter explicitamente para obstaculo
     gc->incluirObstaculo(&plat);
     gc->incluirObstaculo(&plat2);

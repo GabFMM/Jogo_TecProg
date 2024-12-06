@@ -1,38 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\",
+  "WorkspaceRootPath": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Obst_Dificil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|solutionrelative:Obst_Dificil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Gerenciador_colisoes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|solutionrelative:Gerenciador_colisoes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Personagem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|solutionrelative:Personagem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Personagem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Personagem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|solutionrelative:Personagem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Jogador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Jogador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|solutionrelative:Jogador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Jogador.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|solutionrelative:Jogador.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Gerenciador_Colisoes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Gerenciador_Colisoes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|solutionrelative:Gerenciador_Colisoes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Gerenciador_colisoes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|solutionrelative:Gerenciador_colisoes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Obst_Dificil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|solutionrelative:Obst_Dificil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Personagem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|solutionrelative:Personagem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Jogador.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|solutionrelative:Jogador.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,110 +42,109 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Obst_Dificil.cpp",
-              "DocumentMoniker": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Obst_Dificil.cpp",
-              "RelativeDocumentMoniker": "Obst_Dificil.cpp",
-              "ToolTip": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Obst_Dificil.cpp",
-              "RelativeToolTip": "Obst_Dificil.cpp",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAEUAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-06T12:21:28.44Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Gerenciador_colisoes.cpp",
-              "DocumentMoniker": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Gerenciador_colisoes.cpp",
-              "RelativeDocumentMoniker": "Gerenciador_colisoes.cpp",
-              "ToolTip": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Gerenciador_colisoes.cpp",
-              "RelativeToolTip": "Gerenciador_colisoes.cpp",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-06T12:21:15.557Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Jogador.cpp",
-              "DocumentMoniker": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Jogador.cpp",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Jogador.cpp",
               "RelativeDocumentMoniker": "Jogador.cpp",
-              "ToolTip": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Jogador.cpp",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Jogador.cpp",
               "RelativeToolTip": "Jogador.cpp",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAAD8AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-06T12:20:17.152Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
+              "Title": "Gerenciador_colisoes.cpp",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Gerenciador_colisoes.cpp",
+              "RelativeDocumentMoniker": "Gerenciador_colisoes.cpp",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Gerenciador_colisoes.cpp",
+              "RelativeToolTip": "Gerenciador_colisoes.cpp",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAgwNcAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-06T12:21:15.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Personagem.cpp",
-              "DocumentMoniker": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Personagem.cpp",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Personagem.cpp",
               "RelativeDocumentMoniker": "Personagem.cpp",
-              "ToolTip": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Personagem.cpp",
-              "RelativeToolTip": "Personagem.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAPAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Personagem.cpp*",
+              "RelativeToolTip": "Personagem.cpp*",
+              "ViewState": "AgIAAEQAAAAAAAAAAAApwFcAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-06T12:20:15.872Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Personagem.h",
-              "DocumentMoniker": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Personagem.h",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Personagem.h",
               "RelativeDocumentMoniker": "Personagem.h",
-              "ToolTip": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Personagem.h",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Personagem.h",
               "RelativeToolTip": "Personagem.h",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-06T12:19:36.789Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T12:19:36.789Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Jogador.h",
-              "DocumentMoniker": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Jogador.h",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Jogador.h",
               "RelativeDocumentMoniker": "Jogador.h",
-              "ToolTip": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Jogador.h",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Jogador.h",
               "RelativeToolTip": "Jogador.h",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-06T12:19:26.591Z",
+              "WhenOpened": "2024-12-06T12:19:26.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Main.cpp",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Main.cpp",
+              "RelativeDocumentMoniker": "Main.cpp",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Main.cpp",
+              "RelativeToolTip": "Main.cpp",
+              "ViewState": "AgIAADkAAAAAAAAAAAAgwFYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-05T23:51:59.373Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Gerenciador_Colisoes.h",
-              "DocumentMoniker": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Gerenciador_Colisoes.h",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Gerenciador_Colisoes.h",
               "RelativeDocumentMoniker": "Gerenciador_Colisoes.h",
-              "ToolTip": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Gerenciador_Colisoes.h",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Gerenciador_Colisoes.h",
               "RelativeToolTip": "Gerenciador_Colisoes.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-06T12:15:06.798Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Main.cpp",
-              "DocumentMoniker": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Main.cpp",
-              "RelativeDocumentMoniker": "Main.cpp",
-              "ToolTip": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Main.cpp",
-              "RelativeToolTip": "Main.cpp",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAD8AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Obst_Dificil.cpp",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Obst_Dificil.cpp",
+              "RelativeDocumentMoniker": "Obst_Dificil.cpp",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Documentos\\Tudo\\Back end\\Jogo_TecProg\\Obst_Dificil.cpp",
+              "RelativeToolTip": "Obst_Dificil.cpp",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEQAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-05T23:51:59.373Z"
+              "WhenOpened": "2024-12-06T12:21:28.44Z",
+              "EditorCaption": ""
             }
           ]
         }
