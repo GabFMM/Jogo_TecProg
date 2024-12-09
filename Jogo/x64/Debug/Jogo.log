@@ -1,2 +1,8 @@
-﻿  Personagem.cpp
+﻿  ListaEntidades.cpp
+  Main.cpp
+  Obst_Dificil.cpp
+  Personagem.cpp
+  Projetil.cpp
+  Gerando Código...
+  LINK : C:\Users\yagoa\Desktop\Game\Jogo\x64\Debug\Jogo.exe não encontrado ou não compilado pelo o último link incremental; executando link completo
   Jogo.vcxproj -> C:\Users\yagoa\Desktop\Game\Jogo\x64\Debug\Jogo.exe

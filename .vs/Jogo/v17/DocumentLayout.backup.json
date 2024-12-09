@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Jogador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|solutionrelative:Jogador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Personagem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|solutionrelative:Personagem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Obst_Dificil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|solutionrelative:Obst_Dificil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Jogador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|solutionrelative:Jogador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{39D3370E-FBC1-4C31-AB79-FC3D65881DE2}|Jogo.vcxproj|C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Gerenciador_colisoes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -50,11 +50,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Obst_Dificil.cpp",
               "DocumentMoniker": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Obst_Dificil.cpp",
               "RelativeDocumentMoniker": "Obst_Dificil.cpp",
@@ -62,12 +62,11 @@
               "RelativeToolTip": "Obst_Dificil.cpp",
               "ViewState": "AgIAAEUAAAAAAAAAAAAwwC8AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-08T20:00:19.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-08T20:00:19.06Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Entidade.cpp",
               "DocumentMoniker": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Entidade.cpp",
               "RelativeDocumentMoniker": "Entidade.cpp",
@@ -75,8 +74,7 @@
               "RelativeToolTip": "Entidade.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-08T19:48:43.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-08T19:48:43.566Z"
             },
             {
               "$type": "Document",
@@ -112,12 +110,11 @@
               "RelativeToolTip": "Gerenciador_colisoes.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-06T12:21:15.557Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T12:21:15.557Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Jogador.cpp",
               "DocumentMoniker": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Jogador.cpp",
               "RelativeDocumentMoniker": "Jogador.cpp",
@@ -130,16 +127,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Personagem.cpp",
               "DocumentMoniker": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Personagem.cpp",
               "RelativeDocumentMoniker": "Personagem.cpp",
               "ToolTip": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Personagem.cpp",
               "RelativeToolTip": "Personagem.cpp",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAF8AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-06T12:20:15.872Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T12:20:15.872Z"
             },
             {
               "$type": "Document",
@@ -163,12 +159,11 @@
               "RelativeToolTip": "Gerenciador_Colisoes.h",
               "ViewState": "AgIAABsAAAAAAAAAAAAAACEAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-06T12:15:06.798Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T12:15:06.798Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Main.cpp",
               "DocumentMoniker": "C:\\Users\\yagoa\\Desktop\\Game\\Jogo\\Main.cpp",
               "RelativeDocumentMoniker": "Main.cpp",
@@ -176,8 +171,7 @@
               "RelativeToolTip": "Main.cpp",
               "ViewState": "AgIAAEEAAAAAAAAAAAAwwCoAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-05T23:51:59.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-05T23:51:59.373Z"
             }
           ]
         }
