@@ -67,7 +67,7 @@ void Entidades::Obst_Dificil::obstacular(Entidades::Jogador* pJog)
 	if (_danoso) {
 		for (int i = 0; i < _dano; i++) {
 			pJog->operator--();
-			pJog->knockBack(this);
+			
 		
 		}
 		_danoso = false;

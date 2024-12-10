@@ -5,6 +5,7 @@ Entidades::Personagem::Personagem(float inicialX, float inicialY, Gerenciadores:
 {
 	_speed.x = 0.f;
 	_speed.y = 0.f;
+	_mover = true;
 }
 
 
@@ -41,6 +42,10 @@ int Entidades::Personagem::getVidas() const
 void Entidades::Personagem::setVidas(int vid)
 {
 	_num_vidas = vid;
+}
+
+void Entidades::Personagem::setMover(const bool mover) {
+	_mover = mover;
 }
 
 void Entidades::Personagem::setSpeed(float x, float y)

@@ -94,7 +94,9 @@ void Entidades::Jogador::mover()
 
 void Entidades::Jogador::executar()
 {
-	mover();
+	if(_mover)
+		mover();
+
  	if (_num_vidas <= 0)
 	{
 		setVivo(false);

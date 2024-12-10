@@ -103,6 +103,7 @@ void Gerenciadores::Gerenciador_Colisoes::tratarColisoesJogsObstacs()
 			sf::Vector2f ds = calculaColisao(_jogador1, obstaculo);
 			if (ds.x < 0.0f && ds.y < 0.0f) // Verifica se há colisão
 			{
+				obstaculo->obstacular(_jogador1);
 				if (fabs(ds.x) < fabs(ds.y)) // Testa qual direção da colisão é predominante (horizontal ou vertical)
 				{
 					// Colisão predominante na direção horizontal
@@ -145,6 +146,7 @@ void Gerenciadores::Gerenciador_Colisoes::tratarColisoesJogsObstacs()
 			sf::Vector2f ds = calculaColisao(_jogador2, obstaculo);
 			if (ds.x < 0.0f && ds.y < 0.0f) // Verifica se há colisão
 			{
+				obstaculo->obstacular(_jogador2);
 				if (fabs(ds.x) < fabs(ds.y)) // Testa qual direção da colisão é predominante (horizontal ou vertical)
 				{
 					// Colisão predominante na direção horizontal

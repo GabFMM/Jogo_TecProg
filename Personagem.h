@@ -9,6 +9,7 @@ namespace Entidades
 		int _num_vidas;
 		bool _onGround;
 		bool _vivo;
+		bool _mover;
 		sf::Vector2f _speed;
 
 	public:
@@ -28,6 +29,8 @@ namespace Entidades
 		void setSpeed(float x, float y);
 		float getSpeedX()const;
 		float getSpeedY()const;
+
+		void setMover(const bool mover);
 
 		void operator++();
 		void operator--();

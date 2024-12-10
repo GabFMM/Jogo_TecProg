@@ -10,7 +10,7 @@ namespace Gerenciadores{
 	private:
 		// Atributos
 		sf::RenderWindow* window;
-		sf::View view;
+		sf::View* view;
 		
 
 	public:
@@ -22,6 +22,7 @@ namespace Gerenciadores{
 		void render();
 		void display();
 		sf::RenderWindow* getWindow();
+		sf::View* getView() const;
 		bool getOpen()const;
 		void closeWindow();
 		

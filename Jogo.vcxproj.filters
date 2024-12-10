@@ -72,6 +72,9 @@
     <ClInclude Include="Obst_Dificil.h">
       <Filter>Entidades</Filter>
     </ClInclude>
+    <ClInclude Include="Obst_Medio.h">
+      <Filter>Entidades</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -111,6 +114,9 @@
       <Filter>Entidades</Filter>
     </ClCompile>
     <ClCompile Include="Obst_Dificil.cpp">
+      <Filter>Entidades</Filter>
+    </ClCompile>
+    <ClCompile Include="Obst_Medio.cpp">
       <Filter>Entidades</Filter>
     </ClCompile>
   </ItemGroup>

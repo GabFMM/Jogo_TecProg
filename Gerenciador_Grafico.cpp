@@ -3,14 +3,15 @@
 
 Gerenciadores::Gerenciador_Grafico::Gerenciador_Grafico() 
 {
-    window = new sf::RenderWindow(sf::VideoMode(900, 600), "Jogo",sf::Style::Fullscreen);
-    view = sf::View(sf::FloatRect(0, 0, 900, 600));
+    window = new sf::RenderWindow(sf::VideoMode(), "Jogo", sf::Style::Fullscreen);
+    view = new sf::View(sf::FloatRect(0, 0, 900, 600));
     
 }
 
 Gerenciadores::Gerenciador_Grafico::~Gerenciador_Grafico() 
 {
     delete(window);
+    delete(view);
 }
 
 void Gerenciadores::Gerenciador_Grafico::desenhar(Entidades::Ente* pE)
@@ -39,6 +40,10 @@ void Gerenciadores::Gerenciador_Grafico::display()
 sf::RenderWindow* Gerenciadores::Gerenciador_Grafico::getWindow() 
 {
     return window;
+}
+
+sf::View* Gerenciadores::Gerenciador_Grafico::getView() const {
+    return view;
 }
 
 bool Gerenciadores::Gerenciador_Grafico::getOpen() const

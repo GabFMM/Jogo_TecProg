@@ -1,13 +1,14 @@
-C:\Users\yagoa\Desktop\Game\Jogo\Ente.cpp;C:\Users\yagoa\Desktop\Game\Jogo\Jogo\x64\Debug\Ente.obj
-C:\Users\yagoa\Desktop\Game\Jogo\Entidade.cpp;C:\Users\yagoa\Desktop\Game\Jogo\Jogo\x64\Debug\Entidade.obj
-C:\Users\yagoa\Desktop\Game\Jogo\Gerenciador_colisoes.cpp;C:\Users\yagoa\Desktop\Game\Jogo\Jogo\x64\Debug\Gerenciador_colisoes.obj
-C:\Users\yagoa\Desktop\Game\Jogo\Gerenciador_Grafico.cpp;C:\Users\yagoa\Desktop\Game\Jogo\Jogo\x64\Debug\Gerenciador_Grafico.obj
-C:\Users\yagoa\Desktop\Game\Jogo\Inimigo.cpp;C:\Users\yagoa\Desktop\Game\Jogo\Jogo\x64\Debug\Inimigo.obj
-C:\Users\yagoa\Desktop\Game\Jogo\Jogador.cpp;C:\Users\yagoa\Desktop\Game\Jogo\Jogo\x64\Debug\Jogador.obj
-C:\Users\yagoa\Desktop\Game\Jogo\ListaEntidades.cpp;C:\Users\yagoa\Desktop\Game\Jogo\Jogo\x64\Debug\ListaEntidades.obj
-C:\Users\yagoa\Desktop\Game\Jogo\Main.cpp;C:\Users\yagoa\Desktop\Game\Jogo\Jogo\x64\Debug\Main.obj
-C:\Users\yagoa\Desktop\Game\Jogo\Obstaculo.cpp;C:\Users\yagoa\Desktop\Game\Jogo\Jogo\x64\Debug\Obstaculo.obj
-C:\Users\yagoa\Desktop\Game\Jogo\Obst_Dificil.cpp;C:\Users\yagoa\Desktop\Game\Jogo\Jogo\x64\Debug\Obst_Dificil.obj
-C:\Users\yagoa\Desktop\Game\Jogo\Personagem.cpp;C:\Users\yagoa\Desktop\Game\Jogo\Jogo\x64\Debug\Personagem.obj
-C:\Users\yagoa\Desktop\Game\Jogo\Plataforma.cpp;C:\Users\yagoa\Desktop\Game\Jogo\Jogo\x64\Debug\Plataforma.obj
-C:\Users\yagoa\Desktop\Game\Jogo\Projetil.cpp;C:\Users\yagoa\Desktop\Game\Jogo\Jogo\x64\Debug\Projetil.obj
+C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Ente.cpp;C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Jogo\x64\Debug\Ente.obj
+C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Entidade.cpp;C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Jogo\x64\Debug\Entidade.obj
+C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Gerenciador_colisoes.cpp;C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Jogo\x64\Debug\Gerenciador_colisoes.obj
+C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Gerenciador_Grafico.cpp;C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Jogo\x64\Debug\Gerenciador_Grafico.obj
+C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Inimigo.cpp;C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Jogo\x64\Debug\Inimigo.obj
+C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Jogador.cpp;C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Jogo\x64\Debug\Jogador.obj
+C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\ListaEntidades.cpp;C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Jogo\x64\Debug\ListaEntidades.obj
+C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Main.cpp;C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Jogo\x64\Debug\Main.obj
+C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Obstaculo.cpp;C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Jogo\x64\Debug\Obstaculo.obj
+C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Obst_Dificil.cpp;C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Jogo\x64\Debug\Obst_Dificil.obj
+C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Obst_Medio.cpp;C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Jogo\x64\Debug\Obst_Medio.obj
+C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Personagem.cpp;C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Jogo\x64\Debug\Personagem.obj
+C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Plataforma.cpp;C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Jogo\x64\Debug\Plataforma.obj
+C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Projetil.cpp;C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\Jogo\x64\Debug\Projetil.obj

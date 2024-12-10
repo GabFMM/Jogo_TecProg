@@ -7,9 +7,6 @@
 namespace Entidades {
 	class Obst_Dificil : public Obstaculo {
 	private:
-		// Tempo
-		
-
 		// Dano
 		int _dano;
 
