@@ -1,12 +1,2 @@
-﻿  Gerenciador_colisoes.cpp
-  Inimigo.cpp
-  InimigoFacil.cpp
-  InimigoMedio.cpp
-  Jogador.cpp
-  Main.cpp
-  Obst_Dificil.cpp
-  Obst_Medio.cpp
-  Obstaculo.cpp
-  Plataforma.cpp
-  Gerando Código...
+﻿  InimigoDificil.cpp
   Jogo.vcxproj -> C:\Users\gabri\OneDrive\Documentos\Tudo\Back end\Jogo_TecProg\x64\Debug\Jogo.exe

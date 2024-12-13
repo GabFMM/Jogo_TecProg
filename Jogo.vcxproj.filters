@@ -87,6 +87,9 @@
     <ClInclude Include="InimigoMedio.h">
       <Filter>Entidades\Personagens</Filter>
     </ClInclude>
+    <ClInclude Include="InimigoDificil.h">
+      <Filter>Entidades\Personagens</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -135,6 +138,9 @@
       <Filter>Entidades\Personagens</Filter>
     </ClCompile>
     <ClCompile Include="InimigoMedio.cpp">
+      <Filter>Entidades\Personagens</Filter>
+    </ClCompile>
+    <ClCompile Include="InimigoDificil.cpp">
       <Filter>Entidades\Personagens</Filter>
     </ClCompile>
   </ItemGroup>

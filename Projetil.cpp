@@ -1,28 +1,28 @@
 #include "Projetil.h"
 
-// TO DO
-// A posicao do projetil deve depender da posicao do inimigo, o qual nao tem
-// o projetil deve desaparecer ao tocar em jogador, mas não ocorre pois eh preciso inimigo
-
 // ------------------------------- PUBLIC ----------------------------------------------------
 
-Entidades::Projetil::Projetil(int dano, float speed, Gerenciadores::Gerenciador_Grafico* pGraf) 
-	: _dano(dano), _speed(speed), Entidade(0.f,0.f, pGraf){
-	_lancar = false;
+Entidades::Projetil::Projetil(float inicialX, float inicialY, Gerenciadores::Gerenciador_Grafico* pGraf)
+	: Entidade(inicialX, inicialY, pGraf), _lancar(false), _dano(0), dt(0.f), _tempoMaxVoo(6.f){
 
 	sf::Texture* textura = new sf::Texture();
 
-	if (!textura->loadFromFile("assets/flecha.png")) {
+	if (!textura->loadFromFile("assets/fogo3.png")) {
 		std::cout << "Falha ao carregar textura!" << std::endl;
 	}
 
 	setTexture(textura);
+	_body.setScale(0.1f, 0.1f);
+
+	// Velocidade
+	setSpeed(0.f,0.f);
+
+	_clock.restart();
 }
 
 Entidades::Projetil::~Projetil() {
 	_pGraf = nullptr;
 	_dano = 0;
-	_speed = 0;
 
 	if (_pTexture)
 	{
@@ -32,25 +32,74 @@ Entidades::Projetil::~Projetil() {
 }
 
 void Entidades::Projetil::executar() {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F) && _lancar == false) {
-		_lancar = true;
-		Position.y = 20.f;
-		Position.x = _pGraf->getWindow()->getSize().x - _body.getScale().x;
-
-		_body.setPosition(Position);
-	}
-
 	if (_lancar) {
-		_pGraf->desenhar(this);
-		if (Position.x - _speed > 0)
-			Position.x -= _speed;
+		dt += _clock.restart().asSeconds();
 
+		mover();
+
+		desenhar();
+	}
+}
+
+void Entidades::Projetil::mover() {
+	if (estaDentroDaJanela() && !tempoDeVooExcedido()) {
+		Position.x += getSpeedX();
 		_body.setPosition(Position);
 	}
+	else {
+		resetar();
+	}
+}
+
+const bool Entidades::Projetil::estaDentroDaJanela() const {
+	return 
+		Position.x + getSpeedX() > 0.f &&
+		Position.x + getSpeedX() < _pGraf->getWindow()->getSize().x;
+}
+
+const bool Entidades::Projetil::tempoDeVooExcedido() const {
+	return dt >= _tempoMaxVoo;
+}
+
+void Entidades::Projetil::resetar() {
+	dt = 0.f;
+	_lancar = false;
+	setPosition(0.f, 0.f);
+}
+
+void Entidades::Projetil::inverteLado() {
+	// Para a direita
+	if (getSpeedX() > 0.f) {
+		_body.setRotation(180.f);
+	}
+	// Para a esquerda
+	else {
+		_body.setRotation(0.f);
+	}
+}
+
+void Entidades::Projetil::setDano(int dano) {
+	_dano = dano;
 }
 
 const int Entidades::Projetil::getDano() const {
 	return _dano;
+}
+
+void Entidades::Projetil::lancar(float speedX, float speedY, int dano) {
+	setSpeed(speedX, speedY);
+	setDano(dano);
+	inverteLado();
+
+	_lancar = true;
+}
+
+void Entidades::Projetil::setLancar(const bool lancar) {
+	_lancar = lancar;
+}
+
+const bool Entidades::Projetil::getLancar() const {
+	return _lancar;
 }
 
 void Entidades::Projetil::salvar()

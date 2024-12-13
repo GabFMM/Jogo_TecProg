@@ -25,6 +25,7 @@
     <ClInclude Include="Gerenciador_Colisoes.h" />
     <ClInclude Include="Gerenciador_Grafico.h" />
     <ClInclude Include="Inimigo.h" />
+    <ClInclude Include="InimigoDificil.h" />
     <ClInclude Include="InimigoFacil.h" />
     <ClInclude Include="InimigoMedio.h" />
     <ClInclude Include="Jogador.h" />
@@ -44,6 +45,7 @@
     <ClCompile Include="Gerenciador_colisoes.cpp" />
     <ClCompile Include="Gerenciador_Grafico.cpp" />
     <ClCompile Include="Inimigo.cpp" />
+    <ClCompile Include="InimigoDificil.cpp" />
     <ClCompile Include="InimigoFacil.cpp" />
     <ClCompile Include="InimigoMedio.cpp" />
     <ClCompile Include="Jogador.cpp" />

@@ -11,6 +11,7 @@
 #include "Obst_Dificil.h"
 #include "Obst_Medio.h"
 #include "InimigoFacil.h"
+#include "InimigoDificil.h"
 
 
 using namespace std;
@@ -23,7 +24,6 @@ int main()
     Listas::ListaEntidades Lista;
     
     Entidades::Jogador* jog = new Entidades::Jogador(10.f, 10.f, gg,"Player");
-    Entidades::Projetil pro(1, 1.5f, gg);
 
     
     Entidades::Plataforma plat(5, 680, gg, 10);
@@ -36,10 +36,13 @@ int main()
     Entidades::Plataforma plat3(obs.getPositionX() + obs.getBody().getGlobalBounds().width, 680, gg, 10);
    
     Entidades::InimigoFacil inimigo (500, 630, gg, jog,5);
+    Entidades::InimigoDificil boss(plat3.getPositionX() + plat3.getBody().getGlobalBounds().width / 2.f, 630, gg, jog, 10);
+
+    Entidades::Projetil* pro = new Entidades::Projetil(-50.f, -50.f, gg);
+    boss.setProjetil(pro);
 
 
     Lista.insert_back(static_cast<Entidades::Entidade*>(jog));
-    Lista.insert_back(static_cast<Entidades::Entidade*>(&pro));
     Lista.insert_back(static_cast<Entidades::Entidade*>(&plat));
     Lista.insert_back(static_cast<Entidades::Entidade*>(&plat2));
     Lista.insert_back(static_cast<Entidades::Entidade*>(&plat3));
@@ -50,6 +53,8 @@ int main()
     Lista.insert_back(static_cast<Entidades::Entidade*>(&obs));
     Lista.insert_back(static_cast<Entidades::Entidade*>(&obsMe));
     Lista.insert_back(static_cast<Entidades::Entidade*>(&inimigo));
+    Lista.insert_back(static_cast<Entidades::Entidade*>(&boss));
+    Lista.insert_back(static_cast<Entidades::Entidade*>(pro));
     Lista.percorrer();
 
     Gerenciadores::Gerenciador_Colisoes* gc = new Gerenciadores::Gerenciador_Colisoes(0.005f);
@@ -64,6 +69,10 @@ int main()
     gc->incluirObstaculo(&obsMe);
     gc->setJogador1(jog);
     gc->incluirInimigo(&inimigo);
+    gc->incluirInimigo(&boss);
+
+    gc->incluirProjetil(pro);
+
     cout << jog->getNome() << endl;
 
     while (gg->getOpen() )
