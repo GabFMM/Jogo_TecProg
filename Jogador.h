@@ -61,7 +61,7 @@ namespace Entidades
 		bool getAtacando()const;
 		void setAtacando(bool atac);
 
-		void setSword(int direcao);
+		void setSword(int direcao);		
 		void adicionarSword(const std::string& path);
 
 		void atacarInimigo(Entidades::Inimigo* enemy);
