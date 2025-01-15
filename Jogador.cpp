@@ -7,7 +7,8 @@ int Entidades::Jogador::contador(0);
 Entidades::Jogador::Jogador(float inlX, float inY, Gerenciadores::Gerenciador_Grafico* pgra, std::string name)
 	:Personagem(inlX, inY, pgra, 10), _pontos(0), nome(name), tempoPulo(80.f), _velocidade(0.2f),
 	_paralisado(false), _duracaoParalisia(0.f), _tempoParalisado(0.f), _clockParalisia(),
-	_atacando(false), _texturas(), _texturasSword(), Sword(), _ehJogador1(!contador)
+	_atacando(false), _texturas(), _texturasSword(), Sword(), _ehJogador1(!contador),
+	_hudJogador(this)
 {
 	contador++;
 
@@ -77,6 +78,7 @@ Entidades::Jogador::Jogador(float inlX, float inY, Gerenciadores::Gerenciador_Gr
 	adicionarSword("assets/EspadaReta1.png");
 	adicionarSword("assets/EspadaDireita.png");
 	adicionarSword("assets/EspadaEsquerda.png");
+	
 	
 	
 }
@@ -355,9 +357,15 @@ void Entidades::Jogador::atacarInimigo(Entidades::Inimigo* enemy)
 }
 
 
+bool Entidades::Jogador::getEhJogador1() const
+{
+	return _ehJogador1;
+}
+
 void Entidades::Jogador::executar()
 {
-	if (!_paralisado) {
+	if (!_paralisado) 
+	{
 		mover();
 		_clockParalisia.restart();
 	}
@@ -389,6 +397,9 @@ void Entidades::Jogador::executar()
 	}
 
 	_body.setPosition(Position);
+	_hudJogador.executar();
+	_hudJogador.setContador(_num_vidas);
+	
 	desenhar();
 	_pGraf->desenhar(Sword);
 

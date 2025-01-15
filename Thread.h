@@ -12,7 +12,7 @@ class ThreadCPP
 private:
     thread _thread;
 
-    static mutex* _mutex;
+    static mutex _mutex;
 
 protected:
     static void* runThread(void* pthread);

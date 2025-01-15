@@ -28,6 +28,8 @@
     <ClInclude Include="Floresta.h" />
     <ClInclude Include="Gerenciador_Colisoes.h" />
     <ClInclude Include="Gerenciador_Grafico.h" />
+    <ClInclude Include="Heart.h" />
+    <ClInclude Include="Hud.h" />
     <ClInclude Include="Inimigo.h" />
     <ClInclude Include="Jogo.h" />
     <ClInclude Include="Mago.h" />
@@ -58,6 +60,8 @@
     <ClCompile Include="Floresta.cpp" />
     <ClCompile Include="Gerenciador_colisoes.cpp" />
     <ClCompile Include="Gerenciador_Grafico.cpp" />
+    <ClCompile Include="Heart.cpp" />
+    <ClCompile Include="Hud.cpp" />
     <ClCompile Include="Inimigo.cpp" />
     <ClCompile Include="Jogo.cpp" />
     <ClCompile Include="Mago.cpp" />

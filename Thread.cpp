@@ -1,6 +1,6 @@
 #include "Thread.h"
 
-mutex* ThreadCPP::_mutex = new mutex();
+mutex ThreadCPP::_mutex;
 
 void* ThreadCPP::runThread(void* pthread)
 {
@@ -60,11 +60,10 @@ void ThreadCPP::join()
 
 void ThreadCPP::lockMutex()
 {
-    if (_mutex)
-        ThreadCPP::_mutex->lock();
+    ThreadCPP::_mutex.lock();
 }
 
 void ThreadCPP::unlockMutex()
 {
-    ThreadCPP::_mutex->unlock();
+    ThreadCPP::_mutex.unlock();
 }

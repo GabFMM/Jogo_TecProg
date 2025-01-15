@@ -16,19 +16,19 @@
 #include "Mago.h"
 #include "Floresta.h"
 #include "Jogo.h"
+#include "Heart.h"
 
 
 using namespace std;
 
 int main()
 {
-  
     srand(static_cast<unsigned>(time(nullptr)));
 
-    Jogo* principal = new Jogo();
-    principal->criarJogador1("Player1");
-    principal->criarJogador2("Player4");
-    principal->executar();
+     Jogo* principal = new Jogo();
+     principal->criarJogador1("Player1");
+     principal->criarJogador2("Player4");
+     principal->executar();
 
-    return 0;
+     return 0;
 }

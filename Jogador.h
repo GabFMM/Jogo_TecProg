@@ -1,7 +1,9 @@
 #pragma once
-#include "Personagem.h"
+
 #include <iostream>
 #include<SFML/Graphics.hpp>
+#include "Personagem.h"
+#include "Hud.h"
 namespace Entidades
 {
 	class Inimigo;
@@ -33,6 +35,8 @@ namespace Entidades
 			bool _ehJogador1;
 			static int contador;
 
+			Hud _hudJogador;
+
 
 	public:
 		Jogador(float inlX = 0, float inY = 0, Gerenciadores::Gerenciador_Grafico* pgra = nullptr,
@@ -62,7 +66,7 @@ namespace Entidades
 
 		void atacarInimigo(Entidades::Inimigo* enemy);
 
-
+		bool getEhJogador1() const;
 		void executar();
 		//void SalvarDataBuffer();
 
