@@ -74,12 +74,21 @@
     <ClCompile Include="MenuRanking.cpp">
       <Filter>Menus</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Hud.cpp">
       <Filter>Fases</Filter>
     </ClCompile>
     <ClCompile Include="Heart.cpp">
       <Filter>Fases</Filter>
     </ClCompile>
+=======
+    <ClCompile Include="Heart.cpp">
+      <Filter>Fases</Filter>
+    </ClCompile>
+    <ClCompile Include="Hud.cpp">
+      <Filter>Fases</Filter>
+    </ClCompile>
+>>>>>>> master
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Jogo.h" />
@@ -163,12 +172,21 @@
     <ClInclude Include="MenuRanking.h">
       <Filter>Menus</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Hud.h">
       <Filter>Fases</Filter>
     </ClInclude>
     <ClInclude Include="Heart.h">
       <Filter>Fases</Filter>
     </ClInclude>
+=======
+    <ClInclude Include="Heart.h">
+      <Filter>Fases</Filter>
+    </ClInclude>
+    <ClInclude Include="Hud.h">
+      <Filter>Fases</Filter>
+    </ClInclude>
+>>>>>>> master
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Entidades">

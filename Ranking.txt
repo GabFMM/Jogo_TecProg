@@ -1,3 +1,1 @@
-Player1 2540
-Player2 327
-Player4 155
+Yago 50

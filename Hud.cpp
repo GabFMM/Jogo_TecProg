@@ -40,14 +40,17 @@ Fases::Hud::~Hud()
 	int i;
 	for (i = 0; i < _hearts.size(); i++)
 	{
-		if (_hearts[i])
+
+		if (_hearts[i]!= nullptr)
 		{
 			delete _hearts[i];
 			_hearts[i] = nullptr;
 		}
 	}
+	
 	_hearts.clear();
-	// delete [] _hearts
+	
+
 }
 
 void Fases::Hud::criaHeartsJog1()
@@ -89,7 +92,8 @@ void Fases::Hud::criaPontosJog1()
 void Fases::Hud::criaPontosJog2()
 {
 	//Os pontos do jogador2 ficam em cima do ultimo coração que é o primeiro da esquerda para a direita
-	int i = _hearts.size()-1;
+
+	int i =(int) _hearts.size()-1;
 	float posCoracao1 =(float) _hearts[i]->getBody().getPosition().x;
 
 	std::string str = std::to_string(_pJogador->getPontos());

@@ -66,7 +66,9 @@ namespace Entidades
 
 		void atacarInimigo(Entidades::Inimigo* enemy);
 
+
 		bool getEhJogador1() const;
+
 		void executar();
 		//void SalvarDataBuffer();
 

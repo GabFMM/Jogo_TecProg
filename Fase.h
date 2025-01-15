@@ -20,8 +20,10 @@ namespace Fases
 
 		Entidades::Jogador * _jog1;
 		Entidades::Jogador* _jog2;
-		Hud _hudJogador1;
-		Hud _hudJogador2;
+
+		Hud* _hudJog1;
+		Hud* _hudJog2;
+
 		int maxCavaleiros;
 		int maxPlataformas; // Pois cada fase tem um numero diferente
 

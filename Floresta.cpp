@@ -20,6 +20,13 @@ Fases::Floresta::Floresta(Gerenciadores::Gerenciador_Grafico* pgra, Entidades::J
 
 Fases::Floresta::~Floresta()
 {
+    if (_Lista)
+    {
+        _Lista->joinThread();
+        delete _Lista;
+        _Lista = nullptr;
+    }
+    
     //Seto como nulo os ponteiros para o Gerenciador gráfico e jogador
     _GG = nullptr;
     _jog1 = nullptr;
@@ -141,17 +148,22 @@ void Fases::Floresta::executar()
         if (_jog1) 
         {
             _jog1->executar();
-            //Atualizar o Hud
-            _hudJogador1.executar();
-            _hudJogador1.setContador(_jog1->getVidas());
+            if (_hudJog1)
+            {
+                _hudJog1->executar();
+                _hudJog1->setContador(_jog1->getVidas());
+            }
            
         }
         if (_jog2)
         {
             _jog2->executar();
-            //Atualizar o Hud
-            _hudJogador2.executar();
-            _hudJogador2.setContador(_jog2->getVidas());
+            if (_hudJog2)
+            {
+                _hudJog2->executar();
+                _hudJog2->setContador(_jog2->getVidas());
+            }
+
            
         }
 
