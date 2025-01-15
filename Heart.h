@@ -1,18 +1,21 @@
 #pragma once
 #include "Ente.h"
 
-class Heart :public Entidades::Ente
+namespace Fases
 {
-private:
-	sf::Texture* fullHeart;
-	sf::Texture* emptyHeart;
+	class Heart :public Entidades::Ente
+	{
+	private:
+		sf::Texture* fullHeart;
+		sf::Texture* emptyHeart;
 
-public:
-	Heart(Gerenciadores::Gerenciador_Grafico* pGraf = nullptr);
-	~Heart();
-	void setPosX(float x);
-	void setPosY(float y);
-	void updateHeart(int status);
-	void executar();
+	public:
+		Heart(Gerenciadores::Gerenciador_Grafico* pGraf = nullptr);
+		~Heart();
+		void setPosX(float x);
+		void setPosY(float y);
+		void updateHeart(int status);
+		void executar();
 
-};
+	};
+}

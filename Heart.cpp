@@ -1,6 +1,7 @@
 #include "Heart.h"
 
-Heart::Heart(Gerenciadores::Gerenciador_Grafico* pGraf):
+
+Fases::Heart::Heart(Gerenciadores::Gerenciador_Grafico* pGraf):
 	Ente(pGraf),fullHeart(new sf::Texture()),emptyHeart(new sf::Texture())
 {
 	if (!fullHeart->loadFromFile("assets/HeartFULL.png"))
@@ -17,7 +18,7 @@ Heart::Heart(Gerenciadores::Gerenciador_Grafico* pGraf):
 	_body.setScale(0.5f, 0.5f);
 }
 
-Heart::~Heart()
+Fases::Heart::~Heart()
 {
 	if (fullHeart)
 	{
@@ -32,17 +33,17 @@ Heart::~Heart()
 	
 }
 
-void Heart::setPosX(float x)
+void Fases::Heart::setPosX(float x)
 {
 	_body.setPosition(x, _body.getPosition().y);
 }
 
-void Heart::setPosY(float y)
+void Fases::Heart::setPosY(float y)
 {
 	_body.setPosition(_body.getPosition().x, y);
 }
 
-void Heart::updateHeart(int status)
+void Fases::Heart::updateHeart(int status)
 {
 	if (status == 1)
 	{
@@ -54,7 +55,7 @@ void Heart::updateHeart(int status)
 	}
 }
 
-void Heart::executar()
+void Fases::Heart::executar()
 {
 	desenhar();
 }

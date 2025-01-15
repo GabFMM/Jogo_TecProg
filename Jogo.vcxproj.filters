@@ -74,11 +74,11 @@
     <ClCompile Include="MenuRanking.cpp">
       <Filter>Menus</Filter>
     </ClCompile>
-    <ClCompile Include="Heart.cpp">
-      <Filter>Entidades</Filter>
-    </ClCompile>
     <ClCompile Include="Hud.cpp">
-      <Filter>Entidades</Filter>
+      <Filter>Fases</Filter>
+    </ClCompile>
+    <ClCompile Include="Heart.cpp">
+      <Filter>Fases</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -163,11 +163,11 @@
     <ClInclude Include="MenuRanking.h">
       <Filter>Menus</Filter>
     </ClInclude>
-    <ClInclude Include="Heart.h">
-      <Filter>Entidades</Filter>
-    </ClInclude>
     <ClInclude Include="Hud.h">
-      <Filter>Entidades</Filter>
+      <Filter>Fases</Filter>
+    </ClInclude>
+    <ClInclude Include="Heart.h">
+      <Filter>Fases</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

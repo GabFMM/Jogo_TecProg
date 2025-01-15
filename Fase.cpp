@@ -17,7 +17,8 @@ limitar ao ch�o, pois � at� o momento a unica parte que certamente vai ser
 */
 
 Fases::Fase::Fase(Gerenciadores::Gerenciador_Grafico* pgra, Entidades::Jogador* j1,Entidades::Jogador*j2)
-	:Ente(pgra), _GG(pgra), _jog1(j1),_jog2(j2), maxCavaleiros(7), maxPlataformas(8), _mudouEstado(false)
+	:Ente(pgra), _GG(pgra), _jog1(j1),_jog2(j2), maxCavaleiros(7), maxPlataformas(8), _mudouEstado(false),
+	_hudJogador1(_jog1),_hudJogador2(_jog2)
 {
 	_GC = Gerenciadores::Gerenciador_Colisoes::getInstancia();
 	_Lista = new Listas::ListaEntidades();

@@ -17,6 +17,7 @@
 *.sdf
 *.VC.db
 *.VC.VC.opendb
+*.obj
 
 # Ignore builds temporários
 *.exe

@@ -35,7 +35,7 @@ namespace Entidades
 			bool _ehJogador1;
 			static int contador;
 
-			Hud _hudJogador;
+			
 
 
 	public:

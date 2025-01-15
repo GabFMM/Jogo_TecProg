@@ -380,7 +380,7 @@ void Gerenciadores::Gerenciador_Colisoes::tratarColisoesTela() {
 	// Para cada inimigo
 	for (itInimigo = _listaInimigos.begin(); itInimigo != _listaInimigos.end() && (*itInimigo)->getVivo(); itInimigo++) {
 		// Lado esquerdo
-		if ((*itInimigo)->getPositionX() <= 0.f) 
+		if ((*itInimigo)->getPositionX()+(*itInimigo)->getBody().getGlobalBounds().width <= 0.f)
 		{
 			(*itInimigo)->setSpeed((*itInimigo)->getSpeedX() * -1.f, (*itInimigo)->getSpeedY());
 		}

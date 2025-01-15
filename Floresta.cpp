@@ -141,11 +141,17 @@ void Fases::Floresta::executar()
         if (_jog1) 
         {
             _jog1->executar();
+            //Atualizar o Hud
+            _hudJogador1.executar();
+            _hudJogador1.setContador(_jog1->getVidas());
            
         }
         if (_jog2)
         {
             _jog2->executar();
+            //Atualizar o Hud
+            _hudJogador2.executar();
+            _hudJogador2.setContador(_jog2->getVidas());
            
         }
 

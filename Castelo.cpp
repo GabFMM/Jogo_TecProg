@@ -287,7 +287,8 @@ void Fases::Castelo::executar()
 {
 	while (!_mudouEstado) {
 		sf::Event event;
-		while (_GG->getWindow()->pollEvent(event)) {
+		while (_GG->getWindow()->pollEvent(event)) 
+		{
 			// Volta para o menu
 			if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) 
 			{
@@ -300,6 +301,25 @@ void Fases::Castelo::executar()
 
 		_GC->executar();
 		desenhar();
+		/*
+		Depois de implementar dois jogadores inserir esse codigo:
+		 if (_jog1)
+		{
+			_jog1->executar();
+			//Atualizar o Hud
+			_hudJogador1.executar();
+			_hudJogador1.setContador(_jog1->getVidas());
+
+		}
+		if (_jog2)
+		{
+			_jog2->executar();
+			//Atualizar o Hud
+			_hudJogador2.executar();
+			_hudJogador2.setContador(_jog2->getVidas());
+
+		}
+		*/
 		_jog1->executar();
 		_Lista->executar();
 

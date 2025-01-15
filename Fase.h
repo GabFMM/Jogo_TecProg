@@ -4,6 +4,7 @@
 #include "Gerenciador_Colisoes.h"
 #include "Plataforma.h"
 #include "Cavaleiro.h"
+#include "Hud.h"
 
 
 namespace Fases
@@ -19,6 +20,8 @@ namespace Fases
 
 		Entidades::Jogador * _jog1;
 		Entidades::Jogador* _jog2;
+		Hud _hudJogador1;
+		Hud _hudJogador2;
 		int maxCavaleiros;
 		int maxPlataformas; // Pois cada fase tem um numero diferente
 
