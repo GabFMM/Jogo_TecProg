@@ -3,8 +3,9 @@
 // ------------------------------- PUBLIC ----------------------------------------------------
 
 Entidades::Projetil::Projetil(float inicialX, float inicialY, Gerenciadores::Gerenciador_Grafico* pGraf)
-	: Entidade(inicialX, inicialY, pGraf), _lancar(false), _dano(0), dt(0.f), _tempoMaxVoo(Constantes::TEMPO_MAX_VOO){
-
+	: Entidade(inicialX, inicialY, pGraf), _lancar(false), _dano(0), dt(0.f), _tempoMaxVoo(Constantes::TEMPO_MAX_VOO)
+{
+	setTipo(Constantes::TIPO_PROJETIL);
 	sf::Texture* textura = new sf::Texture();
 
 	if (!textura->loadFromFile("assets/fogo3.png")) {
@@ -96,7 +97,7 @@ double Entidades::Projetil::calcularForcaY(double distancia, double gravidade, d
 	*/
 
 	//double forcaY = std::sqrt(distancia * gravidade - forcaX * forcaX);
-	double forcaY = std::sqrt(distancia * gravidade - forcaX * forcaX);
+	double forcaY = (std::sqrt(distancia * gravidade - forcaX * forcaX))*1.5;
 
 	return forcaY;
 }

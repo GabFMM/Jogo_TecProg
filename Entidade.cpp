@@ -160,7 +160,7 @@ namespace Entidades
 			_speed.y = 0; // Zera a velocidade quando está no chão
 		}
 
-		if (getTipo() >= 8) // Caso seja um Obstaculo é empurrado com a mesma força para a outra direção mantendo estatico
+		if (getTipo() >= 8 && getTipo()!= 20) // Caso seja um Obstaculo é empurrado com a mesma força para a outra direção mantendo estatico
 		{
 			_speed.y -= gravidade;
 		}

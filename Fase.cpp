@@ -5,6 +5,7 @@
 #include <vector>
 #include <utility>
 #include "Constantes.h"
+#include "Factory.h"
 /*Implementar posteriormente:
 Posso fazer um vector de pair<pair<float,float>,bool>(Esses vectores para plataforma e cavaleiro ficariam no .h)
 uso o pair de float para as coordenadas e o booleano para saber
@@ -89,7 +90,12 @@ void Fases::Fase::criarCavaleiros()
 
 	for (int i = 0; i < n; i++)
 	{
-		Entidades::Cavaleiro* cav = new Entidades::Cavaleiro(x, 700.0f, _GG, _jog1,_jog2); // Novo cav na posicao x
+		//Entidades::Cavaleiro* cav = new Entidades::Cavaleiro(x, 700.0f, _GG, _jog1,_jog2); // Novo cav na posicao x
+		Entidades::Cavaleiro* cav = static_cast<Entidades::Cavaleiro*>
+			(
+			Entidades::EntidadeFactory::criarEntidade(x, 700.0f, _GG, _jog1, _jog2,Constantes::TIPO_CAVALEIRO
+				));
+
 		_Lista->insert_back(static_cast<Entidades::Entidade*>(cav)); // inserir na lista
 		_GC->incluirInimigo(static_cast<Entidades::Inimigo*>(cav)); // inserir no Gerenciador de colisoes
 		float larguraCavaleiro = cav->getBody().getGlobalBounds().width; // tamanho do cavaleiro
@@ -130,7 +136,11 @@ void Fases::Fase::criarPlataformas()
 		float x = posicoes[i].first;
 		float y = posicoes[i].second;
 
-		Entidades::Plataforma* plat = new Entidades::Plataforma(x, y, _GG);
+		//Entidades::Plataforma* plat = new Entidades::Plataforma(x, y, _GG);
+		Entidades::Plataforma* plat = static_cast<Entidades::Plataforma*>
+			(
+				Entidades::EntidadeFactory::criarEntidade(x, y, _GG, Constantes::TIPO_PLATAFORMA)
+				);
 		_GC->incluirObstaculo(static_cast<Entidades::Obstaculo*>(plat));
 		_Lista->insert_back(static_cast<Entidades::Entidade*>(plat));
 

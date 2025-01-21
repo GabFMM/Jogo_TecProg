@@ -62,16 +62,25 @@ namespace Entidades {
         {
         case Constantes::TIPO_PLATAFORMA:
             return new Entidades::Plataforma(inicialX, inicialY, pgra);
+            
 
         case Constantes::TIPO_BARRA_MAGICA:
             return new Entidades::BarraMagica(inicialX, inicialY, pgra);
+            
 
         case Constantes::TIPO_ESPINHO:
             return new Entidades::Espinho(1,inicialX, inicialY, pgra);
+            
+
+        case Constantes::TIPO_PROJETIL:
+            return new Entidades::Projetil(inicialX, inicialY, pgra);
+            
 
         default:
             return nullptr; // Tipo de obstáculo não reconhecido.
         }
     }
+
+    //Projetil
 
 } // namespace Entidades

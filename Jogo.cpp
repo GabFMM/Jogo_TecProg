@@ -1,6 +1,7 @@
 #include "Jogo.h"
 #include <iostream>
 #include "Constantes.h"
+#include "Factory.h"
 // ESTATICOS
 
 /*
@@ -198,7 +199,8 @@ bool Jogo::criarJogador1(string nome)
 {
 	if (_jogador1 == nullptr)
 	{
-		_jogador1 = new Entidades::Jogador(0, 0, _GerenciadorGrafico, nome);
+		//_jogador1 = new Entidades::Jogador(0, 0, _GerenciadorGrafico, nome);
+		_jogador1 = static_cast<Entidades::Jogador*>(Entidades::EntidadeFactory::criarEntidade(0, 0, _GerenciadorGrafico, nome));
 		if (_jogador1)
 		{
 			rank->verificaPontos(_jogador1);
@@ -214,7 +216,8 @@ bool Jogo::criarJogador2(string nome)
 {
 	if (_jogador2 == nullptr)
 	{
-		_jogador2 = new Entidades::Jogador(30, 0, _GerenciadorGrafico, nome);
+		//_jogador2 = new Entidades::Jogador(30, 0, _GerenciadorGrafico, nome);
+		_jogador2 = static_cast<Entidades::Jogador*>(Entidades::EntidadeFactory::criarEntidade(0, 0, _GerenciadorGrafico, nome));
 		if (_jogador2) 
 		{ 
 			rank->verificaPontos(_jogador2);

@@ -5,6 +5,7 @@
 #include <utility>
 #include "BruxaThread.h"
 #include "Constantes.h"
+#include "Factory.h"
 
 
 Fases::Floresta::Floresta(Gerenciadores::Gerenciador_Grafico* pgra, Entidades::Jogador* jog1, Entidades::Jogador* jog2)
@@ -61,7 +62,12 @@ void Fases::Floresta::criaBarrasMagicas()
         float y = posBarras[i].second;
 
 
-        Entidades::BarraMagica* bar = new Entidades::BarraMagica(x, y, _GG);
+        //Entidades::BarraMagica* bar = new Entidades::BarraMagica(x, y, _GG);
+        Entidades::BarraMagica* bar = static_cast<Entidades::BarraMagica*>
+            (
+                Entidades::EntidadeFactory::criarEntidade(x, y, _GG, Constantes::TIPO_BARRA_MAGICA)
+                );
+
         _GC->incluirObstaculo(static_cast<Entidades::Obstaculo*>(bar));
         _Lista->insert_back(static_cast<Entidades::Entidade*>(bar));
     }
@@ -90,13 +96,22 @@ void Fases::Floresta::criaBruxas()
         float y = posicaoBruxa[i].second;
         if (i < 2)
         {
-            Entidades::BruxaThread* bru = new Entidades::BruxaThread(x, y, _GG, _jog1, _jog2);
+            //Entidades::BruxaThread* bru = new Entidades::BruxaThread(x, y, _GG, _jog1, _jog2);
+            Entidades::BruxaThread* bru = static_cast<Entidades::BruxaThread*>
+                (
+                    Entidades::EntidadeFactory::criarEntidade(x, y, _GG, _jog1, _jog2, Constantes::TIPO_BRUXA_THREAD)
+                    );
+
             _GC->incluirInimigo(static_cast<Entidades::Inimigo*>(bru));
             _Lista->insert_back(static_cast<Entidades::Entidade*>(bru));
         }
         else
         {
-            Entidades::Bruxa* bru = new Entidades::Bruxa(x, y, _GG, _jog1, _jog2);
+            //Entidades::Bruxa* bru = new Entidades::Bruxa(x, y, _GG, _jog1, _jog2);
+            Entidades::Bruxa* bru = static_cast<Entidades::Bruxa*>
+                (
+                    Entidades::EntidadeFactory::criarEntidade(x, y, _GG, _jog1, _jog2, Constantes::TIPO_BRUXA)
+                    );
             _GC->incluirInimigo(static_cast<Entidades::Inimigo*>(bru));
             _Lista->insert_back(static_cast<Entidades::Entidade*>(bru));
         }

@@ -1,6 +1,8 @@
 #include "Castelo.h"
 #include "Jogo.h"
 #include "Constantes.h"
+#include "Factory.h"
+
 Fases::Castelo::Castelo(Gerenciadores::Gerenciador_Grafico* pgra, Entidades::Jogador* j1, Entidades::Jogador* j2)
 	: Fase(pgra, j1,j2), _maxMagos(Constantes::MAX_MAGOS), _maxEspinhos(0), _platsCavaleiros(), _platsBosses(), 
 	_platsBases(), _cavaleiros(), _magos(),_magosNaoCriados(true)
@@ -107,7 +109,13 @@ void Fases::Castelo::criarPlataformas()
 	Entidades::Plataforma* plat = nullptr;
 
 	for (int i = 0; i < numPlatBase; i++) {
-		plat = new Entidades::Plataforma(x, y, _pGraf, 0.f);
+		//plat = new Entidades::Plataforma(x, y, _pGraf, 0.f);
+
+		Entidades::Plataforma* plat = static_cast<Entidades::Plataforma*>
+			(
+				Entidades::EntidadeFactory::criarEntidade(x, y, _pGraf,Constantes::TIPO_PLATAFORMA)
+				);
+
 		_platsBases.push_back(plat);
 
 		_GC->incluirObstaculo(static_cast<Entidades::Obstaculo*>(plat));
@@ -122,7 +130,12 @@ void Fases::Castelo::criarPlataformas()
 	x = (float)_pGraf->getWindow()->getSize().x - 100.f; // 100 seria o tamanho visivel da plataforma
 
 	for (int i = 0; i < 3; i++) {
-		plat = new Entidades::Plataforma(x, y, _pGraf, 0.f);
+		//plat = new Entidades::Plataforma(x, y, _pGraf, 0.f);
+		Entidades::Plataforma* plat = static_cast<Entidades::Plataforma*>
+			(
+				Entidades::EntidadeFactory::criarEntidade(x, y, _pGraf, Constantes::TIPO_PLATAFORMA)
+				);
+
 		_platsBosses.push_back(plat);
 
 		_GC->incluirObstaculo(static_cast<Entidades::Obstaculo*>(plat));
@@ -137,7 +150,12 @@ void Fases::Castelo::criarPlataformas()
 	x = 100.f - (float)platDi.x; // 100 seria o tamanho visivel da plataforma
 
 	for (int i = 0; i < 3 + adicionalPlat; i++) {
-		plat = new Entidades::Plataforma(x, y, _pGraf, 0.f);
+		//plat = new Entidades::Plataforma(x, y, _pGraf, 0.f);
+		Entidades::Plataforma* plat = static_cast<Entidades::Plataforma*>
+			(
+				Entidades::EntidadeFactory::criarEntidade(x, y, _pGraf, Constantes::TIPO_PLATAFORMA)
+				);
+
 		_platsCavaleiros.push_back(plat);
 
 		_GC->incluirObstaculo(static_cast<Entidades::Obstaculo*>(plat));
@@ -169,7 +187,11 @@ void Fases::Castelo::criarEspinhos()
 	for (size_t i = 0; i < tam; i++) {
 		y = _platsBosses[i]->getPosition().y - dimEspinho.y;
 
-		espinho = new Entidades::Espinho(1, x, y, _pGraf);
+		//espinho = new Entidades::Espinho(1, x, y, _pGraf);
+		espinho = static_cast<Entidades::Espinho*>
+			(
+				Entidades::EntidadeFactory::criarEntidade(x, y, _pGraf, Constantes::TIPO_ESPINHO)
+				);
 
 		_GC->incluirObstaculo(static_cast<Entidades::Obstaculo*>(espinho));
 		_Lista->insert_back(static_cast<Entidades::Entidade*>(espinho));
@@ -180,14 +202,22 @@ void Fases::Castelo::criarEspinhos()
 	x = 0.f;
 	y = _platsBases[0]->getPositionY() - dimEspinho.y;
 
-	espinho = new Entidades::Espinho(1, x, y, _pGraf);
+	//espinho = new Entidades::Espinho(1, x, y, _pGraf);
+	espinho = static_cast<Entidades::Espinho*>
+		(
+			Entidades::EntidadeFactory::criarEntidade(x, y, _pGraf, Constantes::TIPO_ESPINHO)
+			);
 
 	_GC->incluirObstaculo(static_cast<Entidades::Obstaculo*>(espinho));
 	_Lista->insert_back(static_cast<Entidades::Entidade*>(espinho));
 
 	x = _pGraf->getWindow()->getSize().x - dimEspinho.x;
 
-	espinho = new Entidades::Espinho(1, x, y, _pGraf);
+	//espinho = new Entidades::Espinho(1, x, y, _pGraf);
+	espinho = static_cast<Entidades::Espinho*>
+		(
+			Entidades::EntidadeFactory::criarEntidade(x, y, _pGraf, Constantes::TIPO_ESPINHO)
+			);
 
 	_GC->incluirObstaculo(static_cast<Entidades::Obstaculo*>(espinho));
 	_Lista->insert_back(static_cast<Entidades::Entidade*>(espinho));
@@ -202,7 +232,11 @@ void Fases::Castelo::criarEspinhos()
 	for (int i = 0; i < adicionalEspinhos; i++) {
 		y = _platsCavaleiros[i]->getPosition().y - dimEspinho.y;
 
-		espinho = new Entidades::Espinho(1, x, y, _pGraf);
+		//espinho = new Entidades::Espinho(1, x, y, _pGraf);
+		espinho = static_cast<Entidades::Espinho*>
+			(
+				Entidades::EntidadeFactory::criarEntidade(x, y, _pGraf, Constantes::TIPO_ESPINHO)
+				);
 
 		_GC->incluirObstaculo(static_cast<Entidades::Obstaculo*>(espinho));
 		_Lista->insert_back(static_cast<Entidades::Entidade*>(espinho));
@@ -234,7 +268,11 @@ void Fases::Castelo::criarCavaleiros()
 	for (int i = 0; i < minCavaleiros + adicionalCavaleiros; i++) {
 		y = _platsCavaleiros[i]->getPosition().y - dimCavaleiro.y;
 
-		cavaleiro = new Entidades::Cavaleiro(x, y, _pGraf, _jog1);
+		//cavaleiro = new Entidades::Cavaleiro(x, y, _pGraf, _jog1);
+		Entidades::Cavaleiro* cavaleiro = static_cast<Entidades::Cavaleiro*>
+			(
+				Entidades::EntidadeFactory::criarEntidade(x, 700.0f, _GG, _jog1, _jog2, Constantes::TIPO_CAVALEIRO
+				));
 
 		_GC->incluirInimigo(static_cast<Entidades::Inimigo*>(cavaleiro));
 		_Lista->insert_back(static_cast<Entidades::Entidade*>(cavaleiro));
@@ -263,8 +301,18 @@ void Fases::Castelo::criarMagos()
 	for (int i = 0; i < minMagos; i++) {
 		y = _platsCavaleiros[i]->getPosition().y - dimMago.y;
 
-		mago = new Entidades::Mago(x, y, _pGraf, _jog1,_jog2);
-		projetil = new Entidades::Projetil(0.f, 0.f, _pGraf);
+		//mago = new Entidades::Mago(x, y, _pGraf, _jog1,_jog2);
+		//projetil = new Entidades::Projetil(0.f, 0.f, _pGraf);
+
+		mago = static_cast<Entidades::Mago*>
+			(
+				Entidades::EntidadeFactory::criarEntidade(x, y, _pGraf, _jog1, _jog2, Constantes::TIPO_MAGO)
+				);
+
+		projetil  = static_cast<Entidades::Projetil*>
+			(
+				Entidades::EntidadeFactory::criarEntidade(0.f, 0.f, _pGraf, Constantes::TIPO_PROJETIL)
+				);
 
 		mago->setProjetil(projetil);
 
@@ -284,8 +332,17 @@ void Fases::Castelo::criarMagos()
 	x = (_pGraf->getWindow()->getSize().x * 9.f) / 10.f;
 	y = _platsBases[0]->getPosition().y - dimMago.y;
 
-	mago = new Entidades::Mago(x, y, _pGraf, _jog1);
-	projetil = new Entidades::Projetil(0.f, 0.f, _pGraf);
+	//mago = new Entidades::Mago(x, y, _pGraf, _jog1);
+	//projetil = new Entidades::Projetil(0.f, 0.f, _pGraf);
+	mago = static_cast<Entidades::Mago*>
+		(
+			Entidades::EntidadeFactory::criarEntidade(x, y, _pGraf, _jog1, _jog2, Constantes::TIPO_MAGO)
+			);
+
+	projetil = static_cast<Entidades::Projetil*>
+		(
+			Entidades::EntidadeFactory::criarEntidade(0.f, 0.f, _pGraf, Constantes::TIPO_PROJETIL)
+			);
 
 	mago->setProjetil(projetil);
 
