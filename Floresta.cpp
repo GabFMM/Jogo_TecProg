@@ -45,7 +45,7 @@ void Fases::Floresta::criaBarrasMagicas()
 {
     // Determinar o número de barras mágicas a serem criadas: entre 1 e 3
 
-    int n = (rand() % 3) + 1;
+    int n = (rand() % 3) + 3;
 
     // Posições centrais das plataformas 2, 4 e 6 (caso a plataforma 6 exista)
     std::vector<std::pair<float, float>> posBarras =
@@ -54,7 +54,9 @@ void Fases::Floresta::criaBarrasMagicas()
         {468+234 , 640.f},                               // Meio da plataforma 2
         {234,460.f},                                    // Meio da plataforma 4
         {_GG->getWindow()->getSize().x - 200, 460.f},  // Meio da plataforma 3 
-        {936.f, 460}
+        {936.f, 460},
+        {468 , 640.f},
+
     };
 
     for (int i = 0; i < n; i++)

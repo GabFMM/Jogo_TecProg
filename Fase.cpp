@@ -81,7 +81,7 @@ void Fases::Fase::gerenciarColisoes()
 void Fases::Fase::criarPlataformas()
 {
 
-	int n = (rand() % 6) + 3;        // Quantidade de plataformas: entre 3 e 8
+	int n = (rand() % 5) + 4;        // Quantidade de plataformas: entre 3 e 8
 	int i;
 
 	std::vector<std::pair<float, float>> posicoes =

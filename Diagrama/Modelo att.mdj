@@ -21704,10 +21704,10 @@
 							"_parent": {
 								"$ref": "O5eFn4h62kaG+YUl4qXABgAA"
 							},
-							"font": "Arial;45;0",
+							"font": "Arial;26;0",
 							"parentStyle": false,
-							"left": 4352,
-							"top": 1000,
+							"left": 4208,
+							"top": 1008,
 							"width": 768,
 							"height": 108,
 							"text": "Yago Augusto Constantino Ribeiro\n\n\n"
@@ -21718,10 +21718,10 @@
 							"_parent": {
 								"$ref": "O5eFn4h62kaG+YUl4qXABgAA"
 							},
-							"font": "Arial;45;0",
+							"font": "Arial;26;0",
 							"parentStyle": false,
-							"left": 4344,
-							"top": 1288,
+							"left": 4200,
+							"top": 1296,
 							"width": 856,
 							"height": 148,
 							"text": "Trabalho de Técnicas de Programação \nTurma S73"
@@ -21732,10 +21732,10 @@
 							"_parent": {
 								"$ref": "O5eFn4h62kaG+YUl4qXABgAA"
 							},
-							"font": "Arial;45;0",
+							"font": "Arial;26;0",
 							"parentStyle": false,
-							"left": 4352,
-							"top": 1144,
+							"left": 4208,
+							"top": 1152,
 							"width": 576,
 							"height": 102,
 							"text": "Gabriel Felipe Machado"
@@ -21748,8 +21748,8 @@
 							},
 							"font": "Arial;45;0",
 							"parentStyle": false,
-							"left": 4352,
-							"top": 1456,
+							"left": 4208,
+							"top": 1464,
 							"width": 147.63671875,
 							"height": 57,
 							"text": "2024.2"
