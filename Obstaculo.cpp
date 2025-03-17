@@ -1,7 +1,8 @@
 #include "Obstaculo.h"
 #include "Constantes.h"
+
 Entidades::Obstaculo::Obstaculo(float inicialX, float inicialY, Gerenciadores::Gerenciador_Grafico* pgra)
-	:Entidade(inicialX,inicialY,pgra),_danoso(false)
+	: Entidade(inicialX, inicialY, pgra), _danoso(false)
 {
 	setTipo(Constantes::TIPO_OBSTACULO);
 }
@@ -23,9 +24,7 @@ bool Entidades::Obstaculo::getDanoso()const
 
 void Entidades::Obstaculo::registraDados()
 {
-	/*
-	bool _danoso;
-	*/
+
 	Entidades::Entidade::registraDados();
 	buffer << _danoso << " ";
 }

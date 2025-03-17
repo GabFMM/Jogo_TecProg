@@ -2,21 +2,13 @@
 #include "Heart.h"
 #include "Jogador.h"
 
-
-
 Fases::Hud::Hud(Entidades::Jogador* pjog)
-	:_pJogador(pjog),_pontos(),_hearts(),_fonte(),_contadorVidas(_pJogador->getVidas())
+	: _pJogador(pjog), _pontos(), _hearts(), _fonte(), _contadorVidas(_pJogador->getVidas())
 
 {
 	_hearts.clear();
 	_pGraf = Gerenciadores::Gerenciador_Grafico::getInstancia();
 	_fonte = _pGraf->getFont();
-	/*
-	if (!_fonte.loadFromFile("assets/fontes/EnglishTowne.ttf"))
-	{
-		std::cerr << "Erro ao incluir fonte.\n";
-	}
-	*/
 
 	if (_pJogador)
 	{
@@ -55,6 +47,7 @@ Fases::Hud::~Hud()
 	
 }
 
+// Cria os coracoes do jogador no canto superior esquerdo da tela
 void Fases::Hud::criaHeartsJog1()
 {
 	float posicaoBaseX = 0;
@@ -65,9 +58,9 @@ void Fases::Hud::criaHeartsJog1()
 		_hearts.push_back(heart);
 		posicaoBaseX += heart->getBody().getGlobalBounds().width;
 	}
-
 }
 
+// Cria os coracoes do jogador no canto superior direito da tela
 void Fases::Hud::criaHeartsJog2()
 {
 	float posicaoBaseX = (float)_pGraf->getWindow()->getSize().x;
@@ -80,6 +73,7 @@ void Fases::Hud::criaHeartsJog2()
 	}
 }
 
+// Cria a pontuacao do jogador no canto superior esquerdo da tela
 void Fases::Hud::criaPontosJog1()
 {
 	std::string str = std::to_string(_pJogador->getPontos());
@@ -91,11 +85,12 @@ void Fases::Hud::criaPontosJog1()
 	_pontos.setPosition(0, 0);
 }
 
+// Cria a pontuacao do jogador no canto superior direito da tela, debaixo do primeiro coracao
 void Fases::Hud::criaPontosJog2()
 {
 	//Os pontos do jogador2 ficam em cima do ultimo coração que é o primeiro da esquerda para a direita
-	int i =(int) _hearts.size()-1;
-	float posCoracao1 =(float) _hearts[i]->getBody().getPosition().x;
+	int i = (int) _hearts.size() - 1;
+	float posCoracao1 = (float) _hearts[i]->getBody().getPosition().x;
 
 	std::string str = std::to_string(_pJogador->getPontos());
 	_pontos.setFont(_fonte);
@@ -119,20 +114,6 @@ void Fases::Hud::atualizaHearts()
 	{
 		_hearts[i]->updateHeart(0);
 	}
-	/*
-	Caso façamos alguma mecanica de recuperar vida temos que mudar aqui 
-
-	int i;
-	for (i = 0; i < _hearts.size(); i++)
-	{
-		if(i <= _contadorVidas)
-			_hearts[i]->updateHeart(1);
-		
-		else
-			_hearts[i]->updateHeart(0);
-	}
-
-	*/
 }
 
 void Fases::Hud::setContador(int vidas)
@@ -143,17 +124,19 @@ void Fases::Hud::setContador(int vidas)
 void Fases::Hud::setJogador(Entidades::Jogador* jog)
 {
 	if(jog)
-	_pJogador = jog;
+		_pJogador = jog;
 }
 
 void Fases::Hud::executar()
 {
 	_pGraf->desenhar(&_pontos);
+
 	int i;
 	for (i = 0; i < _hearts.size(); i++)
 	{
 		_hearts[i]->executar();
 	}
+
 	atualizaHearts();
 	atualizaPontos();
 }

@@ -1,17 +1,15 @@
 #include "Personagem.h"
 #include "Constantes.h"
+
 Entidades::Personagem::Personagem(float inicialX, float inicialY, Gerenciadores::Gerenciador_Grafico* pgra, int vidas)
 	:Entidade(inicialX, inicialY, pgra), _num_vidas(vidas),_direcao(1)
 {
 	setTipo(1);
 }
 
-
-
 Entidades::Personagem::~Personagem()
 {
 }
-
 
 int Entidades::Personagem::getVidas() const
 {
@@ -37,7 +35,6 @@ void Entidades::Personagem::operator--(int i)
 	}
 }
 
-
 void Entidades::Personagem::pular()
 {
 	if (_onGround)
@@ -56,16 +53,11 @@ int Entidades::Personagem::getDirecao() const
 
 void Entidades::Personagem::setDirecao(int dir)
 {
-
 	_direcao = dir;
 }
 
 void Entidades::Personagem::registraDados()
 {
-	/*
-	int _num_vidas;
-	int _direcao;
-	*/
 	Entidades::Entidade::registraDados();
 	buffer << _num_vidas << " " << _direcao<<" ";
 }

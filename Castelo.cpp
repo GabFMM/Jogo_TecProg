@@ -4,17 +4,21 @@
 #include "MortoVivoThread.h"
 
 Fases::Castelo::Castelo(Gerenciadores::Gerenciador_Grafico* pgra, Entidades::Jogador* j1, Entidades::Jogador* j2,Jogo* jog)
-	: Fase(pgra, j1,j2,jog), _maxMagos(Constantes::MAX_MAGOS), _maxEspinhos(0), _platsCavaleiros(), _platsBosses(), 
+	: Fase(pgra, j1, j2, jog), _maxMagos(Constantes::MAX_MAGOS), _maxEspinhos(0), _platsCavaleiros(), _platsBosses(), 
 	_platsBases(), _cavaleiros(), _magos(),_magosNaoCriados(true)
 {
 	setTipoFase(2);
+
+	// Apenas por seguranca. Limpa os vetores
 	_platsBases.clear();
 	_platsCavaleiros.clear();
 	_platsBosses.clear();
 	_cavaleiros.clear();
 	_magos.clear();
 
-	//_GC->setJogador1(j);
+	// Recupera a jogada se estiver salva
+	// Se não cria do zero
+
 	int recuperar;
 	std::ifstream Arquivo;
 	Arquivo.open("Salvamento.txt", std::ios::in);
@@ -24,13 +28,12 @@ Fases::Castelo::Castelo(Gerenciadores::Gerenciador_Grafico* pgra, Entidades::Jog
 	{
 		criarCenario();
 		recuperarFase();
-
 	}
 	else
 	{
 		criarCenario();
 		criarObstaculos();
-		criarInimigos();
+		criarInimigos(); 
 
 		if (_jog1)
 		{
@@ -60,25 +63,22 @@ Fases::Castelo::~Castelo()
 	_platsBosses.clear();
 	_cavaleiros.clear();
 	_magos.clear();
+
 	if (_pTexture)
 	{
 		delete _pTexture;
 		_pTexture = nullptr;
 	}
+
 	_jog1 = nullptr;
 	_jog2 = nullptr;
 }
 
+// Cria o background da fase
 void Fases::Castelo::criarCenario()
 {
 	_pTexture = new sf::Texture();
 	_pTexture = _pGraf->getTextura("Fundo_Castelo");
-	/*
-	if (!_pTexture->loadFromFile("assets/Fase castelo/background.jpg")) {
-		std::cerr << "Erro ao criar o background da fase 2.\n";
-		return;
-	}
-	*/
 	_body.setTexture(*_pTexture);
 
 	// redimensiona de acordo com o tamanho da janela
@@ -130,6 +130,7 @@ void Fases::Castelo::criarPlataformas()
 
 	Entidades::Plataforma* plat = nullptr;
 
+	// insere as plataformas em suas defidas posicoes
 	for (int i = 0; i < numPlatBase; i++) {
 		plat = new Entidades::Plataforma(x, y, _pGraf, 0.f);
 		_platsBases.push_back(plat);
@@ -145,6 +146,7 @@ void Fases::Castelo::criarPlataformas()
 	y = (float)_pGraf->getWindow()->getSize().y - (float)platDi.y - (float)platDi.y * 3.f;
 	x = (float)_pGraf->getWindow()->getSize().x - 100.f; // 100 seria o tamanho visivel da plataforma
 
+	// insere as plataformas em suas defidas posicoes
 	for (int i = 0; i < 3; i++) {
 		plat = new Entidades::Plataforma(x, y, _pGraf, 0.f);
 		_platsBosses.push_back(plat);
@@ -160,6 +162,7 @@ void Fases::Castelo::criarPlataformas()
 	y = (float)_pGraf->getWindow()->getSize().y - (float)platDi.y - (float)platDi.y * 3.f;
 	x = 120.f - (float)platDi.x; // 100 seria o tamanho visivel da plataforma
 
+	// insere as plataformas em suas defidas posicoes
 	for (int i = 0; i < 3 + adicionalPlat; i++) {
 		plat = new Entidades::Plataforma(x, y, _pGraf, 0.f);
 		_platsCavaleiros.push_back(plat);
@@ -189,6 +192,7 @@ void Fases::Castelo::criarEspinhos()
 
 	Entidades::Espinho* espinho = nullptr;
 
+	// insere os espinhos em suas defidas posicoes
 	size_t tam = _platsBosses.size();
 	for (size_t i = 0; i < tam; i++) {
 		y = _platsBosses[i]->getPosition().y - dimEspinho.y;
@@ -223,6 +227,7 @@ void Fases::Castelo::criarEspinhos()
 
 	espinho = nullptr;
 
+	// insere os espinhos em suas defidas posicoes
 	for (int i = 0; i < adicionalEspinhos; i++) {
 		y = _platsCavaleiros[i]->getPosition().y - dimEspinho.y;
 
@@ -255,6 +260,7 @@ void Fases::Castelo::criarCavaleiros()
 
 	Entidades::Cavaleiro* cavaleiro = nullptr;
 
+	// insere os cavaleiros em suas defidas posicoes
 	for (int i = 0; i < minCavaleiros + adicionalCavaleiros; i++) {
 		y = _platsCavaleiros[i]->getPosition().y - dimCavaleiro.y;
 
@@ -271,7 +277,6 @@ void Fases::Castelo::criarCavaleiros()
 
 void Fases::Castelo::criarMagos()
 {
-	
 	Entidades::Mago* mago          = nullptr;
 	Entidades::Projetil* projetil  = nullptr;
 	int n = (rand() % 3) + 3;
@@ -281,6 +286,7 @@ void Fases::Castelo::criarMagos()
 
 	// Gerados nas plataformas laterais
 
+	// insere os magos em suas defidas posicoes
 	for (int i = 0; i < n - 1; i++) 
 	{
 		mago = new Entidades::Mago(x, y, _pGraf, _jog1,_jog2);
@@ -335,31 +341,11 @@ void Fases::Castelo::executar()
 
 		desenhar();
 		
-		if (_jog1) 
-        {
-            _jog1->executar();
-            if (_hudJog1)
-            {
-                _hudJog1->executar();
-                _hudJog1->setContador(_jog1->getVidas());
-            }
-           
-        }
-		if (_jog2)
-		{
-			_jog2->executar();
-			if (_hudJog2)
-			{
-				_hudJog2->executar();
-				_hudJog2->setContador(_jog2->getVidas());
-			}
-			
-		}
+		executarJogadores();
 		
 		_Lista->executar();
 
 		verificarCavaleiros();
-		//verificarMagos();
 		verificarJogadores();
 		verificaInimigosVivos();
 
@@ -374,12 +360,10 @@ void Fases::Castelo::verificarCavaleiros()
 	// Contabiliza quantos cavaleiros estao vivos
 	size_t tam = _cavaleiros.size();
 	for (size_t i = 0; i < tam; i++)
-	{
 		if(_cavaleiros[i])
-		vivos += (int)_cavaleiros[i]->getVivo();
-	}
-		
+			vivos += (int)_cavaleiros[i]->getVivo();
 	
+
 	if (!vivos && _magosNaoCriados)
 	{
 		criarMagos();
@@ -387,22 +371,7 @@ void Fases::Castelo::verificarCavaleiros()
 	}
 }
 
-void Fases::Castelo::verificarMagos()
-{
-	int vivos = 0;
-
-	/*// Contabiliza quantos cavaleiros estao vivos
-	size_t tam = _magos.size();
-	for (size_t i = 0; i < tam; i++)
-		vivos += (int)_magos[i]->getVivo();
-
-	// Finaliza o jogo
-	if (!vivos && tam) {
-		Jogo::mudarStateNum(Constantes::STATE_FIM_JOGO);
-		_mudouEstado = true;
-	}*/
-}
-
+// Recria as instancias, recuperando todas as informacoes pertinentes e reinserindo-as em suas construtoras
 void Fases::Castelo::recuperarFase()
 {
 	int flagJogador1 = 1;
@@ -430,20 +399,10 @@ void Fases::Castelo::recuperarFase()
 	float posX, posY, speedX, speedY;
 	while (arquivoFase >> _Tipo >> _ehThread >> _onGround >> posX >> posY >> speedX >> speedY)
 	{
-
-		/*
-		if (!(arquivoFase >> _Tipo >> _ehThread >> _onGround >> posX >> posY >> speedX >> speedY))
-		{
-			break;
-		}
-		*/
-
-
 		if (_Tipo == Constantes::TIPO_JOGADOR)
 		{
 			int vidas, direcao;
 			std::string nome = " ";
-			//bool ehJog1;
 
 			if (!(arquivoFase >> vidas >> direcao >> nome))
 			{
@@ -619,7 +578,6 @@ void Fases::Castelo::recuperarFase()
 			if (ma >= magos.size())
 			{
 				std::cerr << "Erro: Índice 'ma' fora dos limites do vetor magos." << std::endl;
-				//delete proj; // Evita vazamento de memória
 				break;
 			}
 			else
@@ -645,16 +603,6 @@ void Fases::Castelo::recuperarFase()
 	}
 
 	arquivoFase.close();
-
-	//Entidades::Jogador::setContador(0);
-	/*
-	if (_jog1)
-		delete _jog1;
-	if(_jog2)
-		delete _jog2;
-	_jogo->setJogador1(nullptr);
-	_jogo->setJogador2(nullptr);
-	*/
 
 	LimpaArquivo();
 }

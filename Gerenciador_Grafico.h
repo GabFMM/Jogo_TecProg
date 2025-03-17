@@ -29,7 +29,6 @@ namespace Gerenciadores{
 		void desenhar(Entidades::Ente* pE);
 		void desenhar(sf::Text* texto);
 		void desenhar(sf::Sprite* sprt);
-		//void desenhar(sf::RectangleShape& shape);
 		void clear();
 		void display();
 		sf::RenderWindow* getWindow()const;
@@ -39,6 +38,5 @@ namespace Gerenciadores{
 		void criaMap();
 		sf::Texture* getTextura(std::string chave);
 		sf::Font getFont();
-		
 	};
 } 

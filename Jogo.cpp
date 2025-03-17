@@ -1,25 +1,8 @@
 #include "Jogo.h"
 #include <iostream>
 #include "Constantes.h"
+
 // ESTATICOS
-
-/*
-	StateNum eh uma variavel que permite o fluxo de diferentes estados no jogo
-	Tipos de stateNum's:
-
-	--- > MENUS
-	10 - menu
-	11 - menu de jogadores
-	12 - menu de ranking
-	13 - menu de fases
-
-	--- > FASES
-	20 - fase 1, floresta
-	21 - fase 2, castelo
-
-	-- > EXTRAS
-	30 - tela de fim de jogo
-*/
 
 int Jogo::stateNum = Constantes::STATE_MENU;
 
@@ -37,7 +20,7 @@ void Jogo::setJogador2(Entidades::Jogador* jog)
 
 // DEMAIS
 
-Jogo::Jogo():_jogador1(nullptr),_jogador2(nullptr)
+Jogo::Jogo() : _jogador1(nullptr), _jogador2(nullptr)
 {
 	_GerenciadorGrafico = Gerenciadores::Gerenciador_Grafico::getInstancia();
 	rank = new Ranking();
@@ -114,7 +97,6 @@ void Jogo::executar()
 {
 	while (_GerenciadorGrafico->getOpen()) 
 	{
-		
 		// Escolhe o estado da janela
 
 		switch (stateNum) {

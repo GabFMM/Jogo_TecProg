@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -15,6 +16,7 @@ private:
 	vector<pair<string, int>> leaderbord;
 	ifstream arquivoEntrada;
 	ofstream arquivoSaida;
+
 public:
 	Ranking();
 	~Ranking();
@@ -25,6 +27,5 @@ public:
 	void salvarDados();
 	void atualizaLeaderboard(Entidades::Jogador* pJog);
 	void verificaPontos(Entidades::Jogador* pJog);
-	vector<pair<string, int>> getVector()const;
-	
+	vector<pair<string, int>> getVector()const;	
 };

@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Gerenciador_Grafico.h"
 #include "Jogador.h"
 #include "Floresta.h"

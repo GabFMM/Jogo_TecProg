@@ -1,8 +1,9 @@
 #include "MortoVivo.h"
 #include "Constantes.h"
+
 Entidades::MortoVivo::MortoVivo(float inicialX, float inicialY, Gerenciadores::Gerenciador_Grafico* pgra,
 	Entidades::Jogador* pJog1, Entidades::Jogador* pJog2, int vidas)
-	:Inimigo(inicialX,inicialY,pgra,pJog1,pJog2,vidas),_energetico(rand()%7)
+	: Inimigo(inicialX, inicialY, pgra, pJog1, pJog2, vidas), _energetico(rand() % 7)
 
 {
 	setTipo(Constantes::TIPO_MORTOVIVO);
@@ -10,14 +11,6 @@ Entidades::MortoVivo::MortoVivo(float inicialX, float inicialY, Gerenciadores::G
 	_speed.x = Constantes::VEL_MORTOVIVO;
 
 	sf::Texture* textura = _pGraf->getTextura("MortoVivo");
-
-	/*
-	if (!textura->loadFromFile("assets/Mortovivo-.png"))
-	{
-		std::cout << "Falha ao carregar textura!" << std::endl;
-	}
-	*/
-
 	setTexture(textura);
 	_body.setScale(1.f, 1.f);
 }
@@ -75,8 +68,6 @@ void Entidades::MortoVivo::setEnergetico(int ener)
 	_energetico = ener;
 }
 
-
-
 void Entidades::MortoVivo::mover()
 {
 	Entidades::Jogador* jogadorMaisProximo = getJogadorMaisProximo();
@@ -120,9 +111,9 @@ void Entidades::MortoVivo::danificar(Entidades::Jogador* pJog)
 	pJog->operator--(2);
 	
 	pJog->knockBack(this);
-
 }
 
+// Salva o buffer no Salvamento.txt
 void Entidades::MortoVivo::SalvarDataBuffer(std::ofstream& arquivo)
 {
 	try
@@ -146,9 +137,6 @@ void Entidades::MortoVivo::SalvarDataBuffer(std::ofstream& arquivo)
 
 void Entidades::MortoVivo::registraDados()
 {
-	/*
-	int _energetico
-	*/
 	Entidades::Inimigo::registraDados();
 	buffer << _energetico << "\n";
 }

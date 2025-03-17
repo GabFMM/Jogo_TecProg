@@ -29,7 +29,8 @@ Gerenciadores::Gerenciador_Colisoes::Gerenciador_Colisoes(float gravidade)
 
 Gerenciadores::Gerenciador_Colisoes* Gerenciadores::Gerenciador_Colisoes::getInstancia()
 {
-	if (instancia==nullptr)
+	// Essa condicao ocorre somente na primeira instancia
+	if (instancia == nullptr)
 	{
 		instancia = new Gerenciadores::Gerenciador_Colisoes(Constantes::GRAVIDADE);
 	}
@@ -98,9 +99,11 @@ void Gerenciadores::Gerenciador_Colisoes::incluirProjetil(Entidades::Projetil* p
 }
 
 sf::Vector2f Gerenciadores::Gerenciador_Colisoes::calculaColisao(Entidades::Entidade* ent1, Entidades::Entidade* ent2) {
+	// Grava as posicoes
 	sf::Vector2f pos1 = ent1->getPosition();
 	sf::Vector2f pos2 = ent2->getPosition();
 
+	// Grava as bordas das entidades
 	sf::FloatRect bounds1 = ent1->getBody().getGlobalBounds();
 	sf::FloatRect bounds2 = ent2->getBody().getGlobalBounds();
 
@@ -119,6 +122,7 @@ sf::Vector2f Gerenciadores::Gerenciador_Colisoes::calculaColisao(Entidades::Enti
 
 	return sf::Vector2f(distanciaEntreCentros.x - somaMetades.x, distanciaEntreCentros.y - somaMetades.y);
 }
+
 void Gerenciadores::Gerenciador_Colisoes::tratarColisoesJogsObstacs() {
 	bool colidiuComChao1 = false; // Flag para verificar se o jogador 1 está no chão
 	bool colidiuComChao2 = false; // Flag para verificar se o jogador 2 está no chão
@@ -223,10 +227,9 @@ void Gerenciadores::Gerenciador_Colisoes::tratarColisoesJogsObstacs() {
 	if (!colidiuComChao2 && _jogador2 != nullptr) _jogador2->setGround(false);
 }
 
+// Trata as colisoes de inimigos com obstaculos e jogadores
 void Gerenciadores::Gerenciador_Colisoes::tratarColisoesJogsInimgs()
 {
-
-
 	for (itInimigo = _listaInimigos.begin(); itInimigo != _listaInimigos.end(); itInimigo++)
 	{
 		bool colidiuComChao1 = false;
@@ -548,7 +551,6 @@ void Gerenciadores::Gerenciador_Colisoes::aplicarGravidade()
 
 void Gerenciadores::Gerenciador_Colisoes::executar()
 {
-	
 	tratarColisoesJogsObstacs();
 	tratarColisoesJogsProjeteis();
 	tratarColisoesJogsInimgs();
@@ -557,6 +559,9 @@ void Gerenciadores::Gerenciador_Colisoes::executar()
 	aplicarGravidade();
 }
 
+// Importante, pois a cada vez que entramos ou saimos de uma fase, eh necessario limpar os vetores
+// para poder, em seguida, preencher com novos e diferentes instancias
+// Sem esse metodo o jogo congela, ao entrar em uma nova fase
 void Gerenciadores::Gerenciador_Colisoes::resetar()
 {
 	_listaInimigos.clear();
@@ -572,15 +577,8 @@ bool Gerenciadores::Gerenciador_Colisoes::verificaInimigos()
 	int i;
 	int soma = 0;
 
-	for (i=0 ; i < _listaInimigos.size(); i++)
-	{
+	for (i = 0; i < _listaInimigos.size(); i++)
 		soma += _listaInimigos[i]->getVivo();
-		/*if (_listaInimigos[i]->getEhThread())
-		{
-			Entidades::MortoVivoThread* mort = static_cast<Entidades::MortoVivoThread*>(_listaInimigos[i]);
-			soma += mort->getVivo();
-			printf("%d ", mort->getVivo());
-		}*/
-	}
+	
 	return soma;
 }

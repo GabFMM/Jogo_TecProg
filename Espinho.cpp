@@ -1,23 +1,13 @@
 #include "Espinho.h"
 #include "Constantes.h"
+
 Entidades::Espinho::Espinho(int dano, float inicialX, float inicialY, Gerenciadores::Gerenciador_Grafico* pgra)
 	: Obstaculo(inicialX,inicialY,pgra), _dano(dano)
 {
 	setTipo(Constantes::TIPO_ESPINHO);
-	// Gerenciador grafico
-	//_pGraf = pgra;
 
 	// Imagem
 	sf::Texture* textura = _pGraf->getTextura("Espinho");
-
-	/*
-	if (!textura->loadFromFile("assets/PlataformaEspinho.png")) 
-	{
-		std::cout << "Falha ao carregar textura!" << std::endl;
-	}
-	*/
-
-
 	setTexture(textura);
 	_body.setScale(0.8f, 1.5f);
 
@@ -48,7 +38,7 @@ void Entidades::Espinho::executar()
 	desenhar();
 
 	// Tempo
-	if (!_danoso){
+	if (!_danoso){ // Controle do intervalo das paralisias
 		_segundos += _clock.getElapsedTime().asSeconds();
 
 		if (_segundos > 15.f) {
@@ -60,7 +50,6 @@ void Entidades::Espinho::executar()
 	else {
 		_clock.restart();
 	}
-	
 }
 
 void Entidades::Espinho::obstacular(Entidades::Jogador* pJog)
@@ -73,12 +62,13 @@ void Entidades::Espinho::obstacular(Entidades::Jogador* pJog)
 
 	if (_danoso) 
 	{
-			pJog->operator--(_dano);
+		pJog->operator--(_dano);
 		pJog->knockBack(this);
 		_danoso = false;
 	}
 }
 
+// Coloca as informacoes do buffer no arquivo
 void Entidades::Espinho::SalvarDataBuffer(std::ofstream& arquivo)
 {
 	try
@@ -102,9 +92,6 @@ void Entidades::Espinho::SalvarDataBuffer(std::ofstream& arquivo)
 
 void Entidades::Espinho::registraDados()
 {
-	/*
-	int _dano;
-	*/
 	Entidades::Obstaculo::registraDados();
 	buffer << _dano << "\n";
 }

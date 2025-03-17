@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Entidade.h"
 
 namespace Entidades
@@ -8,6 +9,7 @@ namespace Entidades
 	protected:
 		int _num_vidas;
 		int _direcao;
+
 	public:
 		Personagem(float inicialX = 0, float inicialY = 0, 
 			Gerenciadores::Gerenciador_Grafico* pgra = nullptr, int vidas = 10 );

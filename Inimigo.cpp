@@ -2,8 +2,8 @@
 
 Entidades::Inimigo::Inimigo(float inicialX, float inicialY, Gerenciadores::Gerenciador_Grafico* pgra, 
 	Entidades::Jogador* pJog1, Entidades::Jogador* pJog2,int vidas)
-	:Personagem(inicialX,inicialY,pgra,vidas),
-	_pJog1(pJog1),_pJog2(pJog2), 
+	: Personagem(inicialX,inicialY,pgra,vidas),
+	_pJog1(pJog1), _pJog2(pJog2), 
 	atacar(false), _nivel_maldade(0), posInicialX(inicialX), posInicialY(inicialY)
 {
 
@@ -121,25 +121,21 @@ Entidades::Jogador* Entidades::Inimigo::getJogadorMaisProximo()
 	{
 		if (distanciaJog1 >= 0 && distanciaJog1 <= distanciaJog2)
 		{
-			
 			return _pJog1;
 		}
 		else
 		{
-			
 			return _pJog2;
 		}
 	}
 	else
 	{
 		if (_pJog1)
-		{
-			
+		{	
 			return _pJog1;
 		}
 		else if (_pJog2)
-		{
-			
+		{	
 			return  _pJog2;
 		}
 	}
@@ -154,10 +150,6 @@ void Entidades::Inimigo::setPosInicial(float x, float y)
 
 void Entidades::Inimigo::registraDados()
 {
-	/*
-	float posInicialX;
-		float posInicialY;
-	*/
 	Entidades::Personagem::registraDados();
 	buffer << posInicialX << " " << posInicialY << " ";
 }

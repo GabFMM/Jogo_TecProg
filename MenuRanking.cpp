@@ -3,9 +3,10 @@
 #include "Constantes.h"
 
 using namespace Menus;
+
 MenuRanking::MenuRanking(Gerenciadores::Gerenciador_Grafico* _pGraf, Ranking* rank)
-	:Ente(_pGraf),_mudouEstado(false),_botaoVoltarMenuPrincipal(),_textosBotao(),_mouse(),
-	_houveClique(false),_titulo(),_fonte(),_rank(rank)
+	: Ente(_pGraf), _mudouEstado(false), _botaoVoltarMenuPrincipal(), _textosBotao(), _mouse(),
+	_houveClique(false), _titulo(), _fonte(), _rank(rank)
 {
 	carregarFonte();
 	criarBackground();
@@ -21,12 +22,6 @@ MenuRanking::~MenuRanking()
 void MenuRanking::carregarFonte()
 {
 	_fonte = _pGraf->getFont();
-	/*
-	if (!_fonte.loadFromFile("assets/fontes/EnglishTowne.ttf")) {
-		std::cerr << "Erro ao incluir fonte.\n";
-		return;
-	}
-	*/
 }
 
 void MenuRanking::criarBotao()
@@ -76,13 +71,6 @@ void MenuRanking::criarBackground()
 {
 	sf::Texture* textura = new sf::Texture();
 	textura = _pGraf->getTextura("Pergaminho");
-
-	/*
-	if (!textura->loadFromFile("assets/menu/pergaminho.jpg")) {
-		std::cerr << "Erro ao criar background menu.\n";
-		return;
-	}
-	*/
 	setTexture(textura);
 
 	// tamanho do background
@@ -164,7 +152,6 @@ void MenuRanking::desenharMenu()
 	_pGraf->getWindow()->draw(_body);
 	_pGraf->getWindow()->draw(_titulo);
 	_pGraf->getWindow()->draw(_botaoVoltarMenuPrincipal);
-	
 }
 
 void MenuRanking::executar()
@@ -224,6 +211,13 @@ void MenuRanking::mostrarRanking(Ranking* rank)
 
 		// Calcula a posição centralizada
 		float posicaoX = ((float)tamJanela.x / 2.f) - (tamTexto.width / 2.f);
+
+		// Condicao para que caiba o maior numero possivel de pontuacoes
+		if (posicaoY + i * incrementoY >= _botaoVoltarMenuPrincipal.getPosition().y - _botaoVoltarMenuPrincipal.getGlobalBounds().height)
+		{
+			break;
+		}
+
 		texto.setPosition(posicaoX, posicaoY + i * incrementoY);
 
 		// Desenha o texto

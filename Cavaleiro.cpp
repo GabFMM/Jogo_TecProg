@@ -8,27 +8,26 @@ Entidades::Cavaleiro::Cavaleiro(float inicialX, float inicialY, Gerenciadores::G
 	Entidades::Jogador* pJog1,Entidades::Jogador*pJog2, int vidas)
 	:Inimigo(inicialX, inicialY, pgra, pJog1,pJog2, vidas),_loucura()
 {
-	srand((unsigned int )time(NULL));
+	srand((unsigned int)time(NULL));
+
+	// Atributo pertinente ao ataque
 	_loucura = rand() % 7;
+
 	setTipo(Constantes::TIPO_CAVALEIRO);
+
+	// Corresponde ao dano base
 	setMaldade(Constantes::MALDADE_CAVALEIRO);
+
 	_speed.x = Constantes::VEL_CAVALEIRO;
 
-
+	// Define em qual direcao andara
 	if (rand() % 2)
 	{
 		_speed.x *= -1;
 	}
 
+	// Define a imagem
 	sf::Texture* textura = _pGraf->getTextura("Cavaleiro");
-
-	/*
-	if (!textura->loadFromFile("assets/Inimigo.png"))
-	{
-		std::cout << "Falha ao carregar textura!" << std::endl;
-	}
-	*/
-
 	setTexture(textura);
 	_body.setScale(0.1f, 0.1f);
 
@@ -53,9 +52,9 @@ void Entidades::Cavaleiro::executar()
 	}
 
 	desenhar();
-	
 }
 
+// Move em duas direcoes ao depender da distancia de criacao
 void Entidades::Cavaleiro::mover()
 {
 	if (abs(getDistanciaInicioVector().x) >= Constantes::DISTANCIA_INICIO_CAVALEIRO)
@@ -65,18 +64,19 @@ void Entidades::Cavaleiro::mover()
 	}
 	Position += _speed;
 	_body.setPosition(Position);
-	
 }
 
 void Entidades::Cavaleiro::danificar(Entidades::Jogador* pJog)
 {
+	// Intervalo de tempo entre cada ataque
 	if (_segundos > 0.75f) 
 	{
 		_segundos = 0.f;
+
 		srand(time(NULL));
 		int aleatorio = rand() % 7;
 
-		if(aleatorio==_loucura)
+		if(aleatorio == _loucura)
 			pJog->operator--(getMaldade());
 
 		pJog->operator--(getMaldade());
@@ -84,6 +84,7 @@ void Entidades::Cavaleiro::danificar(Entidades::Jogador* pJog)
 	}
 }
 
+// Coloca as informacoes do buffer no arquivo
 void Entidades::Cavaleiro::SalvarDataBuffer(std::ofstream& arquivo)
 {
 	try
@@ -107,9 +108,6 @@ void Entidades::Cavaleiro::SalvarDataBuffer(std::ofstream& arquivo)
 
 void Entidades::Cavaleiro::registraDados()
 {
-	/*
-	int _loucura;
-	*/
 	Entidades::Inimigo::registraDados();
 	buffer << _loucura << "\n";
 }

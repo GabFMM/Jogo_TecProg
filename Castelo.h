@@ -44,7 +44,6 @@ namespace Fases {
 		void executar();
 
 		void verificarCavaleiros();
-		void verificarMagos();
 		void recuperarFase();
 	};
 }

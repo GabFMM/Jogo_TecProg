@@ -9,10 +9,9 @@
 
 Fases::Floresta::Floresta(Gerenciadores::Gerenciador_Grafico* pgra, Entidades::Jogador* jog1, Entidades::Jogador* jog2,Jogo*jog)
 
-    :Fase(pgra,jog1,jog2,jog),maxMortovivo(Constantes::MAX_MORTOVIVO),maxBarraMagicas(Constantes::MAX_BARRAS_MAGICAS)
+    : Fase(pgra,jog1,jog2,jog), maxMortovivo(Constantes::MAX_MORTOVIVO), maxBarraMagicas(Constantes::MAX_BARRAS_MAGICAS)
 
 {
-
     setTipoFase(1);
     _inimigos.clear();
 
@@ -33,7 +32,6 @@ Fases::Floresta::Floresta(Gerenciadores::Gerenciador_Grafico* pgra, Entidades::J
         criarInimigos();
         criarObstaculos();
     }
- 
 }
 
 Fases::Floresta::~Floresta()
@@ -44,14 +42,13 @@ Fases::Floresta::~Floresta()
         delete _Lista;
         _Lista = nullptr;
     }
-    
-    //Seto como nulo os ponteiros para o Gerenciador gráfico e jogador
-   // _GG = nullptr;
+   
     if (_pTexture)
     {
         delete _pTexture;
         _pTexture = nullptr;
     }
+
     _jog1 = nullptr;
     _jog2 = nullptr;
 
@@ -61,13 +58,11 @@ Fases::Floresta::~Floresta()
 void Fases::Floresta::criaBarrasMagicas()
 {
     // Determinar o número de barras mágicas a serem criadas: entre 1 e 3
-
     int n = (rand() % 3) + 3;
 
     // Posições centrais das plataformas 2, 4 e 6 (caso a plataforma 6 exista)
     std::vector<std::pair<float, float>> posBarras =
     {
-
         {468+234 , 640.f},                               // Meio da plataforma 2
         {234,460.f},                                    // Meio da plataforma 4
         {_GG->getWindow()->getSize().x - 200, 460.f},  // Meio da plataforma 3 
@@ -75,11 +70,11 @@ void Fases::Floresta::criaBarrasMagicas()
         {234,460}
     };
 
+    // Insere as arras bagicas em suas devidas posicoes
     for (int i = 0; i < n; i++)
     {
         float x = posBarras[i].first;
         float y = posBarras[i].second;
-
 
         Entidades::BarraMagica* bar = new Entidades::BarraMagica(x, y, _GG);
         _GC->incluirObstaculo(static_cast<Entidades::Obstaculo*>(bar));
@@ -91,17 +86,15 @@ void Fases::Floresta::criarCavaleiros()
 {
     //Possibilidade de aleatorizar o y entre 700 e 150 rand()%(700-150)+150
 
-
     // (rand() % (max - min + 1)) + min
     int n = (rand() % 5) + 3; // Quantidade varia de 3 a 7
-
-
 
     float x = 310.f;           //Posicao inicial
     float anteriorX = x;
 
     int larguraJanela = _GG->getWindow()->getSize().x; // Largura da janela para testar se nao saiu depois
 
+    // Insere os cavaleiros em suas devidas posicoes
     for (int i = 0; i < n; i++)
     {
         Entidades::Cavaleiro* cav = new Entidades::Cavaleiro(x, 700.0f, _GG, _jog1, _jog2); // Novo cav na posicao x
@@ -110,19 +103,22 @@ void Fases::Floresta::criarCavaleiros()
 
         float larguraCavaleiro = cav->getBody().getGlobalBounds().width; // tamanho do cavaleiro
 
+        // Atualiza a coordenada x
         x = (float)((rand() % _GG->getWindow()->getSize().x) + 310.0f);
+
+        // Caso a coordenada x seja igual a anterior, atualizamos o x
         while (x == anteriorX)
         {
             x = (float)((rand() % _GG->getWindow()->getSize().x) + 310.0f);
         }
-        while (x + 115 + larguraCavaleiro > larguraJanela) // testo se o tamanho do cavaleiro + 115 nao sai da janela
+        // testo se o tamanho do cavaleiro + 115 nao sai da janela
+        while (x + 115 + larguraCavaleiro > larguraJanela) 
             x = (float)((rand() % _GG->getWindow()->getSize().x) + 310.0f);
 
         anteriorX = x;
 
         _inimigos.push_back(static_cast<Entidades::Inimigo*>(cav));
     }
-
 }
 
 void Fases::Floresta::criaBruxas()
@@ -139,9 +135,9 @@ void Fases::Floresta::criaBruxas()
         {0.f, 700.f},									
         {468.f, 700.f},
         {234.f,700.f}
-
     };
 
+    // Insere os mortos-vivos em suas devidas posicoes
     for (i = 0; i < n; i++)
     {
         float x = posicaoBruxa[i].first;
@@ -185,39 +181,17 @@ void Fases::Floresta::executar()
         desenhar();
         _GC->executar();
 
-        if (_jog1) 
-        {
-            _jog1->executar();
-            if (_hudJog1)
-            {
-                _hudJog1->executar();
-                _hudJog1->setContador(_jog1->getVidas());
-            }
-           
-        }
-        if (_jog2)
-        {
-            _jog2->executar();
-            if (_hudJog2)
-            {
-                _hudJog2->executar();
-                _hudJog2->setContador(_jog2->getVidas());
-            }
-           
-        }
+        executarJogadores();
 
         _Lista->executar();
 
         verificarJogadores();
         verificaInimigosVivos();
 
-        //std::cout << _jog1->getPontos() << std::endl;
         _GG->display();
     }
     
     _Lista->joinThread();
-    
-    
 }
 
 void Fases::Floresta::criarInimigos()
@@ -230,20 +204,13 @@ void Fases::Floresta::criarObstaculos()
 {
     criarPlataformas();
     criaBarrasMagicas();
-
 }
 
+// Cria somente a imagem do background
 void Fases::Floresta::criarCenario()
 {
+    // Cria o background
     _pTexture = _pGraf->getTextura("Fundo_Floresta");
-    /*
-    if (!_pTexture->loadFromFile("assets/FundoFlorest.png")) 
-    {
-        std::cerr << "Erro ao criar o background da fase Floresta.\n";
-        return;
-    }
-    */
-
     _body.setTexture(*_pTexture);
 
     // redimensiona de acordo com o tamanho da janela
@@ -274,4 +241,3 @@ void Fases::Floresta::verificarInimigos()
         _mudouEstado = true;
     }
 }
-

@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Obstaculo.h"
 
 namespace Entidades
@@ -16,6 +17,5 @@ namespace Entidades
 		void obstacular(Entidades::Jogador* pJog);
 		void SalvarDataBuffer(std::ofstream& arquivo);
 		void registraDados();
-		
 	};
 }

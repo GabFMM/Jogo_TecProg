@@ -1,16 +1,11 @@
 #include "Entidade.h"
 #include "Constantes.h"
-/*Criar Tratamentos para kcnockback diferentes para cada Inimigo
-O atual atende a bruxa mas o cavaleiro deveria inverter a direcao ao tomar dano
-Talvez seja melhor teleportar ao inves de mudar o speed para que nao tenhamos problemas como a bruxa ficar muito rapida
-ou o Mago ficar muito rapido tambem,ou criar uma forma da speed voltar ao valor original simulando uma desaceleração
-*/
+
 namespace Entidades
 {
-
-	Entidades::Entidade::Entidade(float inicialX, float inicialY, Gerenciadores::Gerenciador_Grafico* pgra):
-		Ente(pgra), Position(inicialX, inicialY),_clock(),_segundos(0.0f),
-		_speed(0,0),_Tipo(0),_onGround(false),_vivo(true),_ehThread(false),buffer()
+	Entidades::Entidade::Entidade(float inicialX, float inicialY, Gerenciadores::Gerenciador_Grafico* pgra) :
+		Ente(pgra), Position(inicialX, inicialY), _clock(), _segundos(0.0f),
+		_speed(0,0), _Tipo(0), _onGround(false), _vivo(true), _ehThread(false), buffer()
 	{
 		_body.setPosition(Position);
 	}
@@ -24,6 +19,7 @@ namespace Entidades
 	{
 		Position.x = x;
 	}
+
 	float Entidade::getPositionY() const
 	{
 		return Position.y;
@@ -71,6 +67,7 @@ namespace Entidades
 	{
 		return _speed.y;
 	}
+
 	void Entidade::restartClock()
 	{
 		_clock.restart();
@@ -87,27 +84,28 @@ namespace Entidades
 			int tipo = getTipo();
 			switch (tipo)
 			{
-				//Jogador
+				// Jogador
 			case Constantes::TIPO_JOGADOR:
 				_speed.x -= 100.0f;
 				break;
 
-				//Cavaleiro
+				// Cavaleiro
 			case Constantes::TIPO_CAVALEIRO:
 				_speed.x *= -1;
 				setPositionX((getPositionX() - 40.0f));
 				break;
 
-				//Bruxa
+				// Bruxa
 			case Constantes::TIPO_MORTOVIVO:
 				setPositionX((getPositionX() - 40.0f));
 				break;
 
+				// Bruxa thread
 			case Constantes::TIPO_MORTOVIVO_THREAD:
 				setPositionX((getPositionX() - 40.0f));
 				break;
 
-				//Mago
+				// Mago
 			case Constantes::TIPO_MAGO:
 				setPositionX((getPositionX() - 60.0f));
 				break;
@@ -120,27 +118,28 @@ namespace Entidades
 			int tipo = getTipo();
 			switch (tipo)
 			{
-				//Jogador
+				// Jogador
 			case Constantes::TIPO_JOGADOR:
 				_speed.x += 100.0f;
 				break;
 
-				//Cavaleiro
+				// Cavaleiro
 			case Constantes::TIPO_CAVALEIRO:
 				_speed.x *= -1;
 				setPositionX((getPositionX() + 40.0f));
 				break;
 
-				//Bruxa
+				// Bruxa
 			case Constantes::TIPO_MORTOVIVO:
 				setPositionX((getPositionX() + 40.0f));
 				break;
 
+				// Bruxa thread
 			case Constantes::TIPO_MORTOVIVO_THREAD:
 				setPositionX((getPositionX() + 40.0f));
 				break;
 
-				//Mago
+				// Mago
 			case Constantes::TIPO_MAGO:
 				setPositionX((getPositionX() + 60.0f));
 				break;
@@ -155,6 +154,7 @@ namespace Entidades
 	void Entidade::sofrerGravidade(float gravidade)
 	{
 		const float maxGravidade = Constantes::MAX_GRAVIDADE; // Limite de velocidade da gravidade
+
 		if (!_onGround)
 		{
 			_speed.y += gravidade;
@@ -193,10 +193,12 @@ namespace Entidades
 	{
 		_vivo = vivo;
 	}
+
 	void Entidade::setEhThread(bool th)
 	{
 		_ehThread = th;
 	}
+	
 	bool Entidade::getEhThread() const
 	{
 		return _ehThread;
@@ -204,16 +206,6 @@ namespace Entidades
 
 	void Entidade::registraDados()
 	{
-		/*
-		bool _onGround;
-		int _Tipo;
-		sf::Vector2f Position;
-		sf::Vector2f _speed;
-		bool _ehThread;
-		*/
-		buffer << _Tipo << " " <<_ehThread<<" "<< _onGround << " " << Position.x <<
-			" " << Position.y << " " << _speed.x << " " << _speed.y << " ";
+		buffer << _Tipo << " " << _ehThread << " " << _onGround << " " << Position.x << " " << Position.y << " " << _speed.x << " " << _speed.y << " ";
 	}
-	
-	
 }

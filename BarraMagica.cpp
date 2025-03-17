@@ -4,19 +4,9 @@ Entidades::BarraMagica::BarraMagica(float inicialX, float inicialY, Gerenciadore
 	:Obstaculo(inicialX,inicialY,pgra), _duracaoParalisia(Constantes::DURACAO_PARALISIA)
 {
 	setTipo(Constantes::TIPO_BARRA_MAGICA);
-	// Gerenciador grafico
-	//_pGraf = pgra; não precisa fazer isso aqui,é inicializado lá no Ente, basta chamar a construtura de Obstaculo
-	// que a cadeia de construtoras garante a inicialização
 
 	// Imagem do obstaculo
 	sf::Texture* textura = _pGraf->getTextura("BarraMagica");
-
-	/*
-	if (!textura->loadFromFile("assets/BarreiraEletrica.png")) {
-		std::cout << "Falha ao carregar textura!" << std::endl;
-	}
-
-	*/
 	setTexture(textura);
 	_body.setScale(1.f, 1.f);
 
@@ -46,6 +36,7 @@ void Entidades::BarraMagica::executar()
 	desenhar();
 }
 
+// Paralisa o jogador por um certo periodo, caso ele colida por cima a paralisia nao ocorre
 void Entidades::BarraMagica::obstacular(Entidades::Jogador* pJog) 
 {
 	if (pJog == nullptr) 
@@ -59,24 +50,19 @@ void Entidades::BarraMagica::obstacular(Entidades::Jogador* pJog)
 
 	if (JogBounds.top + JogBounds.height <= ObsBound.top + 3.f)
 	{
-		//Para paralisar e depois pular acho que teriamos que ter um booleano firstTimeOnTop, se for a primeira vez ele paralisa
-		//Se for a segunda vez ele pular inves de paralisar
 		if (!pJog->getParalisado())
 		{
 			pJog->setGround(true);
 			pJog->pular();
 		}
-		
 	}
 	else
 	{
 		pJog->setParalisado(true, _duracaoParalisia);
 	}
-	
-
-	//pJog->setParalisado(true, _duracaoParalisia);
 }
 
+// Coloca as informacoes do buffer no arquivo
 void Entidades::BarraMagica::SalvarDataBuffer(std::ofstream& arquivo)
 {
 	try
@@ -99,9 +85,6 @@ void Entidades::BarraMagica::SalvarDataBuffer(std::ofstream& arquivo)
 
 void Entidades::BarraMagica::registraDados()
 {
-	/*
-	float _duracaoParalisia;
-	*/
 	Entidades::Obstaculo::registraDados();
 	buffer << _duracaoParalisia << "\n";
 }

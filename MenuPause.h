@@ -3,11 +3,11 @@
 #include <SFML/Graphics.hpp>
 #include "Ente.h"
 #include "Gerenciador_Grafico.h"
+
 namespace Fases
 {
 	class Fase;
 }
-
 
 namespace Menus {
 	class MenuPause : public Entidades::Ente {

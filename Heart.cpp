@@ -2,23 +2,12 @@
 
 
 Fases::Heart::Heart(Gerenciadores::Gerenciador_Grafico* pGraf):
-	Ente(pGraf),fullHeart(new sf::Texture()),emptyHeart(new sf::Texture())
+	Ente(pGraf), fullHeart(new sf::Texture()), emptyHeart(new sf::Texture())
 {
 	fullHeart = _pGraf->getTextura("Heart_Full");
-	/*
-	if (!fullHeart->loadFromFile("assets/HeartFULL.png"))
-	{
-		std::cerr << "Erro ao carregar a textura do coração cheio" << std::endl;
-	}
-	*/
+
 	emptyHeart = _pGraf->getTextura("Heart_Empty");
 
-	/*
-	if (!emptyHeart->loadFromFile("assets/HeartEMPTY.png"))
-	{
-		std::cerr << "Erro ao carregar a textura do coração vazio" << std::endl;
-	}
-	*/
 	setTexture(fullHeart);
 	setPosX(0);
 	setPosY(35);
@@ -32,12 +21,12 @@ Fases::Heart::~Heart()
 		delete fullHeart;
 		fullHeart = nullptr;
 	}
+
 	if (emptyHeart != nullptr)
 	{
 		delete emptyHeart;
 		emptyHeart = nullptr;
 	}
-	
 }
 
 void Fases::Heart::setPosX(float x)
@@ -50,6 +39,7 @@ void Fases::Heart::setPosY(float y)
 	_body.setPosition(_body.getPosition().x, y);
 }
 
+// A depender da vida do jogador, o coracao correspondente devera estar preenchido (com vida) ou vazio (sem vida)
 void Fases::Heart::updateHeart(int status)
 {
 	if (status == 1)

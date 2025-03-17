@@ -1,12 +1,11 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "Gerenciador_Grafico.h"
 
-
 namespace Entidades
-{
-	
+{	
 	class Ente
 	{
 	protected:
@@ -16,14 +15,12 @@ namespace Entidades
 		sf::Texture* _pTexture;
 		sf::Sprite _body;
 		
-		
-		//Criei um contador estatico para o ID
-		static int _cont;
-		
+		// Contator de instancias
+		static int _cont;		
 
 	public:
 		Ente(Gerenciadores::Gerenciador_Grafico* pgra = nullptr);
-		Ente(Gerenciadores::Gerenciador_Grafico* pgra,sf::Texture* text,sf::Sprite bod);
+		Ente(Gerenciadores::Gerenciador_Grafico* pgra, sf::Texture* text, sf::Sprite bod);
 		virtual  ~Ente() { };
 
 		virtual void executar() = 0;
@@ -35,7 +32,6 @@ namespace Entidades
 		void setTexture(sf::Texture* pText);
 		sf::Texture* getTexture()const { return _pTexture; }
 		sf::Sprite getBody()const { return _body; }
-		
 	};
 	
 	

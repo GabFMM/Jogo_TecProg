@@ -109,6 +109,7 @@ void Entidades::Projetil::inverteLado() {
 	}
 }
 
+// Salva o buffer no Salvamento.txt
 void Entidades::Projetil::SalvarDataBuffer(std::ofstream& arquivo)
 {
 	try
@@ -132,10 +133,6 @@ void Entidades::Projetil::SalvarDataBuffer(std::ofstream& arquivo)
 
 void Entidades::Projetil::registraDados()
 {
-	/*
-	int _dano;
-	bool _lancar;
-	*/
 	Entidades::Entidade::registraDados();
 	buffer << _dano << " " << _lancar <<"\n";
 }

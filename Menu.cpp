@@ -2,7 +2,6 @@
 #include "Jogo.h"
 #include "Constantes.h"
 
-
 using namespace Menus;
 
 /*
@@ -22,6 +21,7 @@ Menu::Menu(Gerenciadores::Gerenciador_Grafico* _pGraf) : Entidades::Ente(_pGraf)
 	criarTitulo();
 	criarBotoes();
 
+	// Funcoes lambda
 	_funcoesBotoes[1] = [this]() { executarJogar(); };
 	_funcoesBotoes[2] = [this]() { executarRanking(); };
 	_funcoesBotoes[3] = [this]() { executarSair(); };
@@ -38,12 +38,6 @@ Menu::~Menu()
 void Menu::carregarFonte()
 {
 	_fonte = _pGraf->getFont();
-	/*
-	if (!_fonte.loadFromFile("assets/fontes/EnglishTowne.ttf")) {
-		std::cerr << "Erro ao incluir fonte.\n";
-		return;
-	}
-	*/
 }
 
 void Menu::criarBotoes()
@@ -57,7 +51,6 @@ void Menu::criarBotoes()
 	_botoes[1].setCharacterSize(Constantes::MENU_TAMANHO_BOTOES);
 	_botoes[1].setStyle(sf::Text::Style::Regular);
 	_botoes[1].setFillColor(sf::Color::White);
-	
 
 	// Posicao
 	sf::Vector2u tamJanela = _pGraf->getWindow()->getSize();
@@ -131,12 +124,6 @@ void Menu::criarTitulo()
 void Menu::criarBackground()
 {
 	sf::Texture* textura = _pGraf->getTextura("FundoMedieval");
-	/*
-	if (!textura->loadFromFile("assets/menu/FundoMedieval.png")) {
-		std::cerr<<"Erro ao criar background menu.\n";
-		return;
-	}
-	*/
 	setTexture(textura);
 
 	// tamanho do background
@@ -231,7 +218,7 @@ void Menu::executarJogar()
 			Jogo::mudarStateNum(Constantes::STATE_FLORESTA);
 			_mudouEstado = true;
 		}
-		if (fase == 2)
+		else if (fase == 2)
 		{
 			Jogo::mudarStateNum(Constantes::STATE_CASTELO);
 			_mudouEstado = true;
@@ -244,8 +231,6 @@ void Menu::executarJogar()
 		Jogo::mudarStateNum(Constantes::STATE_MENU_JOGADORES);
 		_mudouEstado = true;
 	}
-	
-	
 }
 
 void Menu::executarRanking()

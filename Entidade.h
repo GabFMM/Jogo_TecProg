@@ -1,4 +1,5 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <sstream>
@@ -7,7 +8,7 @@
 
 namespace Entidades
 {
-	class Entidade :public Entidades::Ente
+	class Entidade : public Entidades::Ente
 	{
 	protected:
 		bool _onGround;
@@ -58,7 +59,5 @@ namespace Entidades
 
 		virtual void SalvarDataBuffer(std::ofstream& arquivo) = 0;
 		virtual void registraDados();
-
-
 	};
 }

@@ -1,4 +1,5 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <string>
@@ -8,7 +9,6 @@
 
 namespace Menus
 {
-
 	class MenuRanking :public Entidades::Ente
 	{
 	private:
@@ -47,6 +47,5 @@ namespace Menus
 		void executar();
 		void mostrarRanking(Ranking* rank);
 		void retornaMenuPrincipal();
-
 	};
 }

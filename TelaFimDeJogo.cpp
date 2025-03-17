@@ -20,14 +20,6 @@ TelaFimDeJogo::~TelaFimDeJogo()
 void TelaFimDeJogo::carregarFonte()
 {
 	_fonte = _pGraf->getFont();
-
-	/*
-	if (!_fonte.loadFromFile("assets/fontes/EnglishTowne.ttf")) 
-	{
-		std::cerr << "Erro ao incluir fonte.\n";
-		return;
-	}
-	*/
 }
 
 void TelaFimDeJogo::criaBackground()
@@ -35,12 +27,6 @@ void TelaFimDeJogo::criaBackground()
 	sf::Texture* textura = new sf::Texture();
 
 	textura = _pGraf->getTextura("Fim_De_Jogo");
-	/*
-	if (!textura->loadFromFile("assets/tela fim de jogo/background2.jpg")) {
-		std::cerr << "Erro ao criar background menu.\n";
-		return;
-	}
-	*/
 	setTexture(textura);
 
 	// tamanho do background

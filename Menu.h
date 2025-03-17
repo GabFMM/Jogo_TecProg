@@ -26,7 +26,6 @@ namespace Menus {
 
 		std::map<int, std::function<void()> > _funcoesBotoes;
 
-
 	public:
 		Menu(Gerenciadores::Gerenciador_Grafico* _pGraf = nullptr);
 		~Menu();

@@ -7,16 +7,8 @@ Entidades::MortoVivoThread::MortoVivoThread(float inicialX, float inicialY, Gere
 	setVidas(5);
 	setTipo(Constantes::TIPO_MORTOVIVO_THREAD);
 	setEhThread(true);
+
 	sf::Texture* textura = _pGraf->getTextura("MortoVivoThread");
-
-
-	/*
-	if (!textura->loadFromFile("assets/MortovivoTH.png"))
-	{
-		std::cout << "Falha ao carregar textura!" << std::endl;
-	}
-	*/
-
 	setTexture(textura);
 	_body.setScale(1.f, 1.f);
 }
@@ -34,7 +26,6 @@ void Entidades::MortoVivoThread::run()
 {
 	while (getVivo())
 	{
-
 		if (_rodar)
 		{
 
@@ -78,7 +69,6 @@ void Entidades::MortoVivoThread::run()
 			
 			unlockMutex();
 			setRodar(false);
-			//yield();
 		}
 	}
 }

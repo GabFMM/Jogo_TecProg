@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Entidade.h"
 #include "Jogador.h"
 
@@ -19,7 +20,6 @@ namespace Entidades
 		virtual void executar() = 0;
 		virtual void obstacular(Entidades::Jogador* pJog) = 0;
 		virtual void SalvarDataBuffer(std::ofstream& arquivo) = 0;
-		virtual void registraDados();
-		
+		virtual void registraDados();	
 	};
 }

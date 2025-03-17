@@ -1,14 +1,15 @@
 #pragma once
+
 #include "Entidade.h"
 #include "Jogador.h"
 #include <iostream>
 #include <math.h>
+
 namespace Entidades
 {
-	class Inimigo :public Entidades::Personagem
+	class Inimigo : public Entidades::Personagem
 	{
 	protected:
-
 		bool atacar;
 		int _nivel_maldade;
 		Entidades::Jogador* _pJog1;
@@ -16,6 +17,7 @@ namespace Entidades
 
 		float posInicialX;
 		float posInicialY;
+
 	public:
 		Inimigo(float inicialX = 0, float inicialY = 0, Gerenciadores::Gerenciador_Grafico* pgra = nullptr,
 			Entidades::Jogador* pJog1 = nullptr, Entidades::Jogador* pJog2 = nullptr, int vidas = 1);
@@ -26,7 +28,6 @@ namespace Entidades
 
 		void setJogador1(Entidades::Jogador* pJog);
 		void setJogador2(Entidades::Jogador* pJog);
-		//Entidades::Jogador* getJogador()const;
 
 		double getDistanciaJogador1();
 		double getDistanciaJogador2();
@@ -37,7 +38,6 @@ namespace Entidades
 		sf::Vector2f getDistanciaInicioVector();
 
 		Entidades::Jogador* getJogadorMaisProximo();
-
 		
 		void setPosInicial(float x, float y);
 		virtual void executar() = 0;

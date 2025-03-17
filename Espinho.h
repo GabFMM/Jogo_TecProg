@@ -17,6 +17,5 @@ namespace Entidades {
 		void obstacular(Entidades::Jogador* pJog);
 		void SalvarDataBuffer(std::ofstream& arquivo);
 		void registraDados();
-		
 	};
 }

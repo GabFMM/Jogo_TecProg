@@ -1,7 +1,9 @@
 #pragma once
+
 #include "Personagem.h"
 #include <iostream>
-#include<SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
+
 namespace Entidades
 {
 	class Inimigo;
@@ -9,17 +11,14 @@ namespace Entidades
 	{
 		private:
 			// Estado de paralisia
-			sf::Sprite telaParalisada; // pode criar uma classe figura para o sprite e a textura
+			sf::Sprite telaParalisada;
 			sf::Texture* texturaTela;
 			sf::Clock _clockParalisia; // clock diferente do clock pulo
 			float _duracaoParalisia;
 			float _tempoParalisado;
 			bool _paralisado;
-			//
 
-			//sf::Clock _clockAtaque;
 			bool _atacando;
-			//float _tempoAtaque;
 
 			float tempoPulo;
 			int _pontos;
@@ -68,7 +67,5 @@ namespace Entidades
 		void SalvarDataBuffer(std::ofstream& arquivo);
 		void registraDados();
 		static void setContador(int i);
-
 	};
-
 }

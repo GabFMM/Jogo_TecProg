@@ -5,48 +5,31 @@
 #include <vector>
 #include <utility>
 #include "Constantes.h"
-#include "Jogo.h"
 #include"MortoVivoThread.h"
-/*Implementar posteriormente:
-Posso fazer um vector de pair<pair<float,float>,bool>(Esses vectores para plataforma e cavaleiro ficariam no .h)
-uso o pair de float para as coordenadas e o booleano para saber
-se a plataforma ja foi gerada, dai posso randomizar melhor os obstaculos dificeis e medios, al�m de ter mais de 5
-
-op��es de plataformas, ou seja gero umas 10 posi��es, algumas plataformas podem se sobrepor a outras, portanto antes de
-gerar elas verifico se outra plataforma muito proxima ja foi gerada, o mesmo pode ser feito para inimigos,posso gerar
-todas as plataformas e depois verifico quais foram geradas e posso colocara inimigos em todas elas ao inves de me
-
-limitar ao ch�o, pois � at� o momento a unica parte que certamente vai ser gerada
-*/
 
 Fases::Fase::Fase(Gerenciadores::Gerenciador_Grafico* pgra, Entidades::Jogador* j1, Entidades::Jogador* j2, Jogo* jog)
-	:Ente(pgra), _GG(pgra), _jog1(j1), _jog2(j2), maxCavaleiros(Constantes::MAX_CAVALEIROS),
-	maxPlataformas(Constantes::MAX_PLATAFORMA), _mudouEstado(false), _hudJog1(nullptr), _hudJog2(nullptr), _menuPause(nullptr),
-	_arquivoFase(), _terminada(false), _TipoFase(0),_jogo(jog)
+	: Ente(pgra), _GG(pgra), _jog1(j1), _jog2(j2), maxCavaleiros(Constantes::MAX_CAVALEIROS),
+	maxPlataformas(Constantes::MAX_PLATAFORMA), _mudouEstado(false), _hudJog1(nullptr), _hudJog2(nullptr), _menuPause(nullptr), _arquivoFase(), _terminada(false), _TipoFase(0),_jogo(jog)
 {
 	_GC = Gerenciadores::Gerenciador_Colisoes::getInstancia();
 	_Lista = new Listas::ListaEntidades();
+
+	// Cria a mesma quantia de jogadores pedida conforme o menu de jogadores
 	if (_jog1)
 	{
 		_GC->setJogador1(_jog1);
 		_hudJog1 = new Hud(_jog1);
-		
 	}
+
 	if (_jog2)
 	{
 		_GC->setJogador2(_jog2);
-		_hudJog2 = new Hud(_jog2);
-		
+		_hudJog2 = new Hud(_jog2);	
 	}
-	
 }
 
 Fases::Fase::~Fase()
 {
-	//Desaloco o Gerenciador de Colisoes e a ListaEntidades
-	/*if (_GC)
-		delete _GC;
-		*/
 	if (_Lista) 
 	{
 		_Lista->joinThread();
@@ -73,9 +56,6 @@ Fases::Fase::~Fase()
 		_jogo = nullptr;
 	}
 		
-
-	//Seto como nulo os ponteiros para o Gerenciador gr�fico e jogador
-	//_GG = nullptr;
 	_jog1 = nullptr;
 	_jog2 = nullptr;
 
@@ -87,9 +67,9 @@ void Fases::Fase::gerenciarColisoes()
 	_GC->executar();
 }
 
+// Cria as plataformas da fase floresta, mas eh sobreescrita dentro de castelo.cpp
 void Fases::Fase::criarPlataformas()
 {
-
 	int n = (rand() % 4) + 5;        // Quantidade de plataformas: entre 5 e 8
 	int i;
 
@@ -104,7 +84,8 @@ void Fases::Fase::criarPlataformas()
 		{0.f, 200.f},										// Plataforma 7
 		{_GG->getWindow()->getSize().x - 468.f, 200.f}		// Plataforma 8
 	};
-
+	
+	// Insere as plataformas em suas devidas posicoes
 	for (i = 0; i < n; i++)
 	{
 		float x = posicoes[i].first;
@@ -113,14 +94,7 @@ void Fases::Fase::criarPlataformas()
 		Entidades::Plataforma* plat = new Entidades::Plataforma(x, y, _GG);
 		_GC->incluirObstaculo(static_cast<Entidades::Obstaculo*>(plat));
 		_Lista->insert_back(static_cast<Entidades::Entidade*>(plat));
-
 	}
-
-}
-
-void Fases::Fase::criarCenario()
-{
-	//Implementar depois 
 }
 
 void Fases::Fase::pause()
@@ -170,7 +144,7 @@ void Fases::Fase::SalvarEntidades()
 	{
 		// Abre o arquivo para salvar (append)
 		_arquivoFase.open("Salvamento.txt", std::ios::app);
-		_arquivoFase << _terminada << " " << _TipoFase << "\n";
+		_arquivoFase << !_terminada << " " << _TipoFase << "\n";
 		_arquivoFase.close();
 	}
 	catch (const std::ios_base::failure& e) {
@@ -187,6 +161,8 @@ void Fases::Fase::SalvarEntidades()
 		_jog2->registraDados();
 		_jog2->SalvarDataBuffer(_arquivoFase);
 	}
+
+	// Salva todos os dados das entidades dentro de _Lista
 	_Lista->registrarDados();
 	_Lista->salvar(_arquivoFase);
 }
@@ -250,8 +226,8 @@ void Fases::Fase::verificarJogadores()
 
 void Fases::Fase::verificaInimigosVivos()
 {
-	_terminada = _GC->verificaInimigos();
-	if (!_terminada) 
+	_terminada = !_GC->verificaInimigos();
+	if (_terminada) 
 	{
 		LimpaArquivo();
 		Jogo::mudarStateNum(Constantes::STATE_FIM_JOGO);
@@ -290,16 +266,7 @@ void Fases::Fase::recuperarFase()
 	bool _ehThread, _onGround;
 	float posX, posY, speedX, speedY;
 	while (arquivoFase >> _Tipo >> _ehThread >> _onGround >> posX >> posY >> speedX >> speedY)
-	{
-		
-		/*
-		if (!(arquivoFase >> _Tipo >> _ehThread >> _onGround >> posX >> posY >> speedX >> speedY)) 
-		{
-			break;
-		}
-		*/
-
-		
+	{		
 		if (_Tipo == Constantes::TIPO_JOGADOR)
 		{
 			int vidas, direcao;
@@ -504,7 +471,30 @@ void Fases::Fase::recuperarFase()
 	
 	LimpaArquivo();
 }
+
 void Fases::Fase::setJogo(Jogo* jo)
 {
 	_jogo = jo;
+}
+
+void Fases::Fase::executarJogadores()
+{
+	if (_jog1)
+	{
+		_jog1->executar();
+		if (_hudJog1)
+		{
+			_hudJog1->executar();
+			_hudJog1->setContador(_jog1->getVidas());
+		}
+	}
+	if (_jog2)
+	{
+		_jog2->executar();
+		if (_hudJog2)
+		{
+			_hudJog2->executar();
+			_hudJog2->setContador(_jog2->getVidas());
+		}
+	}
 }

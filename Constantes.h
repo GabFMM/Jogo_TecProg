@@ -1,28 +1,30 @@
 #pragma once
+
 namespace Constantes
 {
+	// Gravidade
 	constexpr float GRAVIDADE = 0.005f;
 	constexpr float MAX_GRAVIDADE = 0.3f;
 
-	//Personagem
+	// Personagem
 	constexpr int TIPO_PERSONAGEM = 1;
 	constexpr float PULO_PERSONAGEM = -1.55f;
 
-	//Jogador
+	// Jogador
 	constexpr int VIDAS_JOGADOR = 10;
 	constexpr float TEMPO_PULO = 80.0f;
 	constexpr float VEL_JOGADOR = 0.2f;
 	constexpr int TIPO_JOGADOR = 3;
 	constexpr float PULO_JOGADOR = -1.75f;
 
-	//Cavaleiro
+	// Cavaleiro
 	constexpr int VIDAS_CAVALEIRO = 3;
 	constexpr float VEL_CAVALEIRO = 0.03f;
 	constexpr float DISTANCIA_INICIO_CAVALEIRO = 300.0f;
 	constexpr int MALDADE_CAVALEIRO = 1;
 	constexpr int TIPO_CAVALEIRO = 4;
 
-	//Bruxa
+	// Bruxa
 	constexpr int VIDAS_MORTOVIVO = 5;
 	constexpr float VEL_MORTOVIVO = 0.04f;
 	constexpr double DISTANCIA_ATIVACAO_MORTOVIVO = 700.0f;
@@ -30,54 +32,54 @@ namespace Constantes
 	constexpr int TIPO_MORTOVIVO = 5;
 	constexpr int TIPO_MORTOVIVO_THREAD = 7;
 
-	//Mago
+	// Mago
 	constexpr int VIDAS_MAGO = 10;
 	constexpr float VEL_MAGO = 0.06f;
 	constexpr float VEL_MAGO_BUFF = 0.09f;
 	constexpr double DISTANCIA_ATIVACAO_MAGO = 800.0f;
-	constexpr int MALDADE_MAGO = 3;
+	constexpr int MALDADE_MAGO = 1;
 	constexpr int TIPO_MAGO = 6;
 	constexpr int DANO_BATER = 3;
 
 
-	//Obstaculo
+	// Obstaculo
 	constexpr int TIPO_OBSTACULO = 8;
 	constexpr int TIPO_PLATAFORMA = 9;
 	constexpr int TIPO_BARRA_MAGICA = 10;
 	constexpr int TIPO_ESPINHO = 11;
 	constexpr float DURACAO_PARALISIA = 8000.f;
 
-	//Projetil
+	// Projetil
 	constexpr float TEMPO_MAX_VOO = 22.f;
 	constexpr int TIPO_PROJETIL = 33;
 
-	//TelaFimDeJogo
+	// TelaFimDeJogo
 	constexpr int TAMANHO_TITULO = 90;
 	constexpr int TAMANHO_SUBTITULO = 85;
 	constexpr int TAMANHO_BOTOES = 50;
 
-	//Castelo
+	// Castelo
 	constexpr int MAX_MAGOS = 4;
 
-	//Fase
+	// Fase
 	constexpr int MAX_CAVALEIROS = 8;
 	constexpr int MAX_PLATAFORMA = 7;
 
-	//Floresta
+	// Floresta
 	constexpr int MAX_MORTOVIVO = 5;
 	constexpr int MAX_BARRAS_MAGICAS = 4;
 
-	//Menu
+	// Menu
 	constexpr int MENU_TAMANHO_TITULO = 145;
 	constexpr int MENU_TAMANHO_BOTOES = 50;
 
-	//MenuFases
+	// MenuFases
 	constexpr int MENU_FASES_TAMANHO_BOTOES = 50;
 
-	//MenuJogadores 
+	// MenuJogadores 
 	constexpr int MENU_JOG_TAMANHO_BOTOES = 50;
 
-	//MenuRanking
+	// MenuRanking
 	constexpr int RANKING_TAMANHO_TITULO = 115;
 	constexpr int RANKING_TAMANHO_BOTOES = 50;
 
@@ -99,7 +101,8 @@ namespace Constantes
 		-- > EXTRAS
 		30 - tela de fim de jogo
 	*/
-	//Jogo
+
+	// Estados
 	constexpr int STATE_MENU = 10;
 	constexpr int STATE_MENU_JOGADORES = 11;
 	constexpr int STATE_MENU_RANKING = 12;
@@ -108,5 +111,4 @@ namespace Constantes
 	constexpr int STATE_CASTELO = 21;
 	constexpr int STATE_FIM_JOGO = 30;
 	constexpr int STATE_FECHAR_JANELA = 0;
-
 }

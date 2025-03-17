@@ -2,16 +2,16 @@
 #include "stdlib.h"
 #include "Inimigo.h"
 #include "Constantes.h"
+
 int Entidades::Jogador::contador(0);
+
 void Entidades::Jogador::setContador(int i)
 {
 	Jogador::contador = i;
-	std::cout << "Contador foi redefinido para: " << Jogador::contador << std::endl;
 }
 
 Entidades::Jogador::Jogador(float inlX, float inY, Gerenciadores::Gerenciador_Grafico* pgra, std::string name)
-	:Personagem(inlX, inY, pgra,Constantes::VIDAS_JOGADOR), _pontos(0), nome(name), tempoPulo(Constantes::TEMPO_PULO)
-	, _velocidade(Constantes::VEL_JOGADOR),_paralisado(false), _duracaoParalisia(0.f), _tempoParalisado(0.f), _clockParalisia(),
+	: Personagem(inlX, inY, pgra,Constantes::VIDAS_JOGADOR), _pontos(0), nome(name), tempoPulo(Constantes::TEMPO_PULO), _velocidade(Constantes::VEL_JOGADOR), _paralisado(false), _duracaoParalisia(0.f), _tempoParalisado(0.f), _clockParalisia(),
 	_atacando(false), _texturas(), _texturasSword(), Sword(), _ehJogador1(!contador)
 {
 	contador++;
@@ -23,12 +23,6 @@ Entidades::Jogador::Jogador(float inlX, float inY, Gerenciadores::Gerenciador_Gr
 	{
 		sf::Texture* textura = _pGraf->getTextura("Jogador1_Direita");
 
-		/*
-		if (!textura->loadFromFile("assets/Player1.png"))
-		{
-			std::cout << "Falha ao carregar textura!" << std::endl;
-		}
-		*/
 		Ente::setTexture(textura);
 		_body.setScale(0.1f, 0.1f);
 		adicionarTextura("Jogador1_Direita");
@@ -39,33 +33,14 @@ Entidades::Jogador::Jogador(float inlX, float inY, Gerenciadores::Gerenciador_Gr
 	{
 		sf::Texture* textura  = _pGraf->getTextura("Jogador2_Direita");
 
-		/*if (!textura->loadFromFile("assets/Player2.png"))
-		{
-			std::cout << "Falha ao carregar textura!" << std::endl;
-		}
-		*/
 		Ente::setTexture(textura);
 		_body.setScale(0.1f, 0.1f);
 		adicionarTextura("Jogador2_Direita");
 		adicionarTextura("Jogador2_Esquerda");
-	
-	}
-	
-	
-
-	//sf::Texture* texturaSword = new sf::Texture();
-
-	
+	}	
 
 	// tela de paralisia
 	texturaTela = _pGraf->getTextura("Tela_Paralisada");
-
-	/*
-	if (!texturaTela->loadFromFile("assets/TelaParalisada.png")) 
-	{
-		std::cout << "Falha ao carregar textura!" << std::endl;
-	}
-	*/
 
 	telaParalisada.setTexture(*texturaTela);
 
@@ -87,12 +62,11 @@ Entidades::Jogador::Jogador(float inlX, float inY, Gerenciadores::Gerenciador_Gr
 	adicionarSword("Espada");
 	adicionarSword("Espada_Direita");
 	adicionarSword("Espada_Esquerda");
-	
 }
 
 Entidades::Jogador::~Jogador()
 {
-	if(contador>0)
+	if (contador > 0)
 		contador--;
 
 	if (_pTexture)
@@ -168,8 +142,6 @@ int Entidades::Jogador::getPontos() const
 	return _pontos;
 }
 
-
-
 void Entidades::Jogador::pular()
 {
 	if (_onGround)
@@ -198,7 +170,6 @@ void Entidades::Jogador::mover()
 			{
 				pular();
 				tempoPulo = 0.f;
-
 			}
 		}
 
@@ -258,7 +229,6 @@ void Entidades::Jogador::mover()
 		{
 			setAtacando(true);
 
-
 			if (Sword)
 			{
 				setSword(getDirecao());
@@ -273,18 +243,12 @@ void Entidades::Jogador::mover()
 
 			}
 		}
-
 	}
-	
-	// (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && (Position.y + _body.getGlobalBounds().height <= _pGraf->getWindow()->getSize().y))
-		//_speed.y = +_velocidade;
-
 	
 	Sword->setPosition(getPosition().x + 12.0f*_direcao, getPosition().y+2.0f);
 	Sword->setScale(0.1f, 0.05f);
 	Position += _speed;
 	setTexture(getDirecao());
-
 }
 
 void Entidades::Jogador::setTexture(int direcao)
@@ -295,6 +259,7 @@ void Entidades::Jogador::setTexture(int direcao)
 	
 	else
 		index = 1;
+
 	_body.setTexture(*_texturas[index]);
 }
 
@@ -302,17 +267,6 @@ void Entidades::Jogador::adicionarTextura(const std::string& path)
 {
 	sf::Texture* textura1 = _pGraf->getTextura(path);
 	_texturas.push_back(textura1);
-	
-	/*
-	if (textura1->loadFromFile(path))
-	{
-		
-	}
-	else
-	{
-		std::cout << "Falha ao carregar texturas!" << std::endl;
-	}
-	*/
 }
 
 bool Entidades::Jogador::getAtacando() const
@@ -333,6 +287,7 @@ void Entidades::Jogador::setSword(int direcao)
 
 	else
 		index = 2;
+
 	Sword->setTexture(*_texturasSword[index]);
 }
 
@@ -340,22 +295,10 @@ void Entidades::Jogador::adicionarSword(const std::string& path)
 {
 	sf::Texture* textura1 = _pGraf->getTextura(path);
 	_texturasSword.push_back(textura1);
-
-	/*
-	if (textura1->loadFromFile(path))
-	{
-		_texturasSword.push_back(textura1);
-	}
-	else
-	{
-		std::cout << "Falha ao carregar texturas!" << std::endl;
-	}
-	*/
 }
 
 void Entidades::Jogador::atacarInimigo(Entidades::Inimigo* enemy)
 {
-
 	(enemy)->operator--(1);
 	(enemy)->knockBack(this);
 	if (enemy->getVidas() <= 0)
@@ -391,6 +334,7 @@ void Entidades::Jogador::executar()
 		_pGraf->getWindow()->draw(telaParalisada);
 	}
 
+	// Limita a velocidade horizontal
 	if (_speed.x > 0.3f)
 		setSpeed(0.3f, getSpeedY());
 	
@@ -406,9 +350,9 @@ void Entidades::Jogador::executar()
 	_body.setPosition(Position);
 	desenhar();
 	_pGraf->desenhar(Sword);
-
 }
 
+// Salva o buffer no arquivo Salvamento.txt
 void Entidades::Jogador::SalvarDataBuffer(std::ofstream& arquivo)
 {
 	try
@@ -432,11 +376,8 @@ void Entidades::Jogador::SalvarDataBuffer(std::ofstream& arquivo)
 
 void Entidades::Jogador::registraDados()
 {
-	/*
-	std::string nome
-	*/
 	Entidades::Personagem::registraDados();
-	buffer << nome <<"\n";
+	buffer << nome << "\n";
 }
 
 

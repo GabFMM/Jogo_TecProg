@@ -1,9 +1,10 @@
 #pragma once
+
 #include "Ente.h"
 
 namespace Fases
 {
-	class Heart :public Entidades::Ente
+	class Heart : public Entidades::Ente
 	{
 	private:
 		sf::Texture* fullHeart;
@@ -16,6 +17,5 @@ namespace Fases
 		void setPosY(float y);
 		void updateHeart(int status);
 		void executar();
-
 	};
 }

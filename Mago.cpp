@@ -1,7 +1,8 @@
 #include "Mago.h"
 #include "Constantes.h"
+
 // IMPORTANTE
-// direcao = -1 � esquerda, direcao = 1 � direita
+// direcao = -1 eh esquerda, direcao = 1 eh direita
 // _clock e _segundos controlam a frequencia de bater do boss
 
 Entidades::Mago::Mago(float inicialX, float inicialY, Gerenciadores::Gerenciador_Grafico* pgra, Entidades::Jogador* pJog1, Entidades::Jogador* pJog2, int vidas)
@@ -14,14 +15,6 @@ Entidades::Mago::Mago(float inicialX, float inicialY, Gerenciadores::Gerenciador
 	_speed.x = Constantes::VEL_MAGO;
 
 	sf::Texture* textura = _pGraf->getTextura("Mago");
-
-	/*
-	if (!textura->loadFromFile("assets/chefe.png"))
-	{
-		std::cout << "Falha ao carregar textura!" << std::endl;
-	}
-	*/
-
 	setTexture(textura);
 	_body.setScale(0.1f, 0.1f);
 
@@ -105,7 +98,7 @@ void Entidades::Mago::danificar(Entidades::Jogador* pJog) {
 	// Dentro do alcance para atirar
 	if (jogProximo == _pJog1)
 	{
-		if (getDistanciaJogador1() > _body.getGlobalBounds().width * 1.65f) 
+		if (getDistanciaJogador1() > _body.getGlobalBounds().width * 2.f) 
 		{
 			atirar();
 		}
@@ -117,7 +110,7 @@ void Entidades::Mago::danificar(Entidades::Jogador* pJog) {
 	}
 	else
 	{
-		if (getDistanciaJogador2() > _body.getGlobalBounds().width * 1.65f) 
+		if (getDistanciaJogador2() > _body.getGlobalBounds().width * 2.f) 
 		{
 			atirar();
 		}
@@ -168,6 +161,7 @@ void Entidades::Mago::atirar()
 
 void Entidades::Mago::bater() 
 {
+	// Intervalo entre cada ataque corpo a corpo
 	if (_segundos > 0.5f) 
 	{
 		_segundos = 0;
@@ -185,8 +179,6 @@ void Entidades::Mago::bater()
 
 			_pJog2->knockBack(this);
 		}
-			
-		
 	}
 }
 
@@ -200,6 +192,7 @@ void Entidades::Mago::setSegIntervalo(float seg)
 	_segundosIntervaloPro = seg;
 }
 
+// Salva o buffer no Salvamento.txt
 void Entidades::Mago::SalvarDataBuffer(std::ofstream& arquivo)
 {
 	try
@@ -223,10 +216,6 @@ void Entidades::Mago::SalvarDataBuffer(std::ofstream& arquivo)
 
 void Entidades::Mago::registraDados()
 {
-	/*
-	float _segundosIntervaloPro;
-	int _vidasPerdidas;
-	*/
 	Entidades::Inimigo::registraDados();
 	buffer << _segundosIntervaloPro << " " << _vidasPerdidas << "\n";
 }

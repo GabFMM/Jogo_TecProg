@@ -2,15 +2,13 @@
 
 #include <vector>
 #include "Fase.h"
-
 #include "MortoVivo.h"
-
 #include "BarraMagica.h"
 #include "Inimigo.h"
 
 namespace Fases
 {
-	class Floresta :public Fase
+	class Floresta : public Fase
 	{
 	private:
 		const int maxMortovivo;
@@ -19,7 +17,7 @@ namespace Fases
 		std::vector<Entidades::Inimigo*> _inimigos;
 
 	public:
-		Floresta(Gerenciadores::Gerenciador_Grafico* pgra = nullptr, Entidades::Jogador* jog1 = nullptr, Entidades::Jogador* jog2 = nullptr,Jogo* jog = nullptr);
+		Floresta(Gerenciadores::Gerenciador_Grafico* pgra = nullptr, Entidades::Jogador* jog1 = nullptr, Entidades::Jogador* jog2 = nullptr, Jogo* jog = nullptr);
 		~Floresta();
 
 		void criaBarrasMagicas();

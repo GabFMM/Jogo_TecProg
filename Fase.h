@@ -9,9 +9,10 @@
 #include <fstream>
 
 class Jogo;
+
 namespace Fases
 {
-	class Fase :public Entidades::Ente
+	class Fase : public Entidades::Ente
 	{
 	protected:
 		bool _mudouEstado;
@@ -42,7 +43,7 @@ namespace Fases
 		
 		virtual void criarCavaleiros() = 0;  // Pois cada fase determina onde será gerado
 		virtual void criarPlataformas();
-		virtual void criarCenario();
+		virtual void criarCenario() = 0;
 
 		virtual void executar() = 0;
 		virtual void criarInimigos() = 0;
@@ -57,5 +58,6 @@ namespace Fases
 		void setTipoFase(int i);
 		void recuperarFase();
 		void setJogo(Jogo* jo);
+		void executarJogadores();
 	};
 }

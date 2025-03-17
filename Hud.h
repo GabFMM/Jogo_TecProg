@@ -1,8 +1,7 @@
 #pragma once
+
 #include "Heart.h"
 #include "Gerenciador_Grafico.h"
-
-//class Heart;
 
 namespace Entidades 
 {
