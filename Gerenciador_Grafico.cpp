@@ -10,6 +10,7 @@ Gerenciadores::Gerenciador_Grafico::Gerenciador_Grafico() :
     window = new sf::RenderWindow(sf::VideoMode(900, 600), "Jogo", sf::Style::Fullscreen);
     view = sf::View(sf::FloatRect(0, 0, 900, 600));
     criaMap();
+    window->setMouseCursorVisible(true);
 }
 
 //Metodo do Singleton, se ja existir um gerenciador statico ele retorna o mesmo para manter 1, se nao ele instancia um novo

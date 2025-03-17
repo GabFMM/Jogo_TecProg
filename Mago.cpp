@@ -98,7 +98,7 @@ void Entidades::Mago::danificar(Entidades::Jogador* pJog) {
 	// Dentro do alcance para atirar
 	if (jogProximo == _pJog1)
 	{
-		if (getDistanciaJogador1() > _body.getGlobalBounds().width * 2.f) 
+		if (getDistanciaJogador1() > _body.getGlobalBounds().width * 1.65f) 
 		{
 			atirar();
 		}
@@ -110,7 +110,7 @@ void Entidades::Mago::danificar(Entidades::Jogador* pJog) {
 	}
 	else
 	{
-		if (getDistanciaJogador2() > _body.getGlobalBounds().width * 2.f) 
+		if (getDistanciaJogador2() > _body.getGlobalBounds().width * 1.65f) 
 		{
 			atirar();
 		}
