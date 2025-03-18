@@ -1,6 +1,6 @@
 Yago 754
 Gabriel 204
-G 24
+G 27
 Augusto 19
 Leticia 18
 Namie 16
